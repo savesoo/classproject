@@ -1,0 +1,36 @@
+package first;
+
+public class Calculator {
+
+	public static void main(String[] args) {
+		
+		System.out.println(sum(40,80));
+		System.out.println(sub(40,80));
+		System.out.println(mul(40,80));
+		System.out.println(div(40,80));
+
+	}
+	
+	public static int sum(int num1, int num2) {
+		int plus = num1 + num2;
+		return plus;
+	}
+	
+	public static int sub(int num1, int num2) {
+		int minus = num1 - num2;
+		return minus;
+	}
+	
+	public static int mul(int num1, int num2) {
+		int multi = num1 * num2;
+		return multi;
+	}
+	
+	public static double div(int num1, int num2) {
+		double divis = (float)num1 / num2;
+		return divis;
+	}
+	
+	
+
+}
