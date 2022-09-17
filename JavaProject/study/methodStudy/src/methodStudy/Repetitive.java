@@ -13,6 +13,8 @@ public class Repetitive {
 		printSquareStars();
 		System.out.println();
 		printTriangleStars();
+		System.out.println();
+		printSnowflake();
 
 	}
 
@@ -37,9 +39,9 @@ public class Repetitive {
 			for (int u = 0; u < 5; ++u) {
 				if (f == 0 || f == 4) {
 					System.out.print(" * ");
-				} else if ( u == 0 || u == 4) {
+				} else if (u == 0 || u == 4) {
 					System.out.print(" * ");
-				}else {
+				} else {
 					System.out.print("   ");
 				}
 			}
@@ -62,6 +64,23 @@ public class Repetitive {
 				if (u == f) {
 					System.out.print(" * ");
 				} else if (u == 0 || f == 4) {
+					System.out.print(" * ");
+				} else {
+					System.out.print("   ");
+				}
+			}
+			System.out.println();
+		}
+	}
+
+	public static void printSnowflake() {
+		for (int o = 0; o < 9; o++) {
+			for (int n = 0; n < 9; n++) {
+				if (o == 4 || n == 4 ) {
+					System.out.print(" * ");
+				} else if ( o == n ) {
+					System.out.print(" * ");
+				} else if ( n == 8-o ) {
 					System.out.print(" * ");
 				} else {
 					System.out.print("   ");
