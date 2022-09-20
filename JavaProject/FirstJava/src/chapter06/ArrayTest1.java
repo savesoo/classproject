@@ -48,6 +48,8 @@ public class ArrayTest1 {
 		
 		int sum = 0;
 		
+		// for문 모르는 상태라면 sum = korScore[0]+korScore[1]+...+korScore[9] 
+		
 		for (int i = 0; i < korScore.length; i++) {
 			sum += korScore[i];
 		}
