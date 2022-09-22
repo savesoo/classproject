@@ -1,3 +1,4 @@
+
 package ver02;
 
 public class SmartPhoneMain2 {

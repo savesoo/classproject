@@ -223,7 +223,7 @@ public class SmartPhone {
 		// 3. 배열에 인스턴스의 참조값을 저장
 		
 		if(numOfContact == contacts.length) {          // 현재 사이즈를 최대 사이즈와 비교
-			System.out.println("최대 저장 개수는" + contacts + "개 입니다.");
+			System.out.println("최대 저장 개수는 " + contacts.length + "개 입니다.");
 			return;
 		}
 
@@ -262,7 +262,7 @@ public class SmartPhone {
 
 		// 처음 입력 : numOfContact -> 0 인덱스로 사용됨~
 		contacts[numOfContact++] = contact;
-		// numOfContact++;
+		//numOfContact++;
 
 	}
 
