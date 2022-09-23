@@ -6,8 +6,8 @@ public class SmartPhone extends Phone{
 	// 하위 클래스 : 상위 클래스 멤버 + 새로운 멤버 정의
 	String model;
 	
-	SmartPhone(String phoneNumber) {
-		super(phoneNumber); // 상위 클래스의 생성자를 호출하는 키워드 -> 생성자는 상속의 대상이 아니기 때문
+	SmartPhone() {
+		super("010-7777-4444"); // 상위 클래스의 생성자를 호출하는 키워드 -> 생성자는 상속의 대상이 아니기 때문
 		this.model = "IOS";
 	}
 	
