@@ -24,9 +24,9 @@ public class SmartPhone extends Phone{
 	
 	public static void main(String[] args) {
 		
-		//SmartPhone sp = new SmartPhone("010-0313-0422");
-		//SmartPhone sp = new SmartPhone();
-		SmartPhone sp = new SmartPhone("010-7777-4444", "Google");
+		//SmartPhone sp = new SmartPhone("010-0313-0422"); // 이렇게 출력하면 String이 하나인 생성자가 없으므로 오류
+		SmartPhone sp = new SmartPhone();    // 전화번호, 모델 모두 초기값으로 출력
+		//SmartPhone sp = new SmartPhone("010-7777-4444", "Google");  // 전화번호, 모델의 데이터를 다 넣어주는 경우
 		
 		System.out.println(sp.phoneNumber);
 		sp.call();
@@ -37,3 +37,8 @@ public class SmartPhone extends Phone{
 
 }
 
+class JuniorPhone extends SmartPhone {
+	JuniorPhone() {
+		super.super();
+	}
+}

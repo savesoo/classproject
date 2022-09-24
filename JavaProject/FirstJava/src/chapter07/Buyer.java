@@ -12,7 +12,7 @@ public class Buyer {
 	void buy(Product p) {
 		
 		money = money - p.price; // 내가 가진 돈 차감
-		// 보너스 증가
+		// 포인트 증가
 		myPoint += p.point;
 		System.out.println(p + "제품을 구매했습니다.");
 		// p -> p.toString

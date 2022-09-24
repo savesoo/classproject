@@ -7,9 +7,10 @@ public class SmartPhoneMain2 {
 		Iphone iPhone = new Iphone("010-2222-2222");
 		GooglePhone googlePhone = new GooglePhone("010-3333-3333");
 
-//		callByPhone(androidPhone);
-//		callByPhone(iPhone);
-//		callByPhone(googlePhone);
+		callByPhone(androidPhone);
+		callByPhone(iPhone);
+		callByPhone(googlePhone);
+		
 	}
 	
 	static void callByPhone(Phone phone) {
