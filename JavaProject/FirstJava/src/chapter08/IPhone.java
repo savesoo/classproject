@@ -12,5 +12,5 @@ public class IPhone extends Phone {
 		System.out.println("아이폰의 전원을 켭니다.");
 		power = true;
 	}
-
+	// 상속시에 오버라이딩 필수적으로 요구됨!
 }
