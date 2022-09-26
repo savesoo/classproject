@@ -52,6 +52,9 @@ public class SmartPhone {
 		if (inputInfo > 3) {
 			System.out.println("입력할 수 없는 형태입니다.");
 			return;
+		} else if (inputInfo == 3) {
+			System.out.println("저장을 취소합니다.");
+			return;
 		}
 
 		System.out.println("기본 정보를 입력합니다.");
@@ -111,9 +114,7 @@ public class SmartPhone {
 
 			contact = new CustomerContact(name, phoneNum, email, address, birthD, group, company, goods, position);
 
-		} else if (inputInfo == 3) {
-			System.out.println("저장을 취소합니다.");
-		}
+		} 
 
 		contacts[countNum++] = contact; // 변수에 현재 위치를 넣어서 각 데이터를 순차적으로 처리해줌
 
