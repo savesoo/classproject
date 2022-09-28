@@ -14,8 +14,8 @@ public class Exam3Main {
 		System.out.print("이름을 입력하세요 > ");
 		String name = sc.nextLine();
 
-		// if (name.trim().length()==0) {  공백이 0이니?
-		if (name.trim().isEmpty()) {   // 공백을 제거하면 비어있니?
+		// if (name.trim().length()==0) {  // 앞뒤 공백을 제거한 문자열 길이가 0인지 체크. isEmpty와 같은 기능
+		if (name.trim().isEmpty()) {       // 앞뒤 공백을 제거하고 문자열이 비어있는지 체크
 			System.out.println("공백은 허용하지 않습니다.");
 		} else {
 
