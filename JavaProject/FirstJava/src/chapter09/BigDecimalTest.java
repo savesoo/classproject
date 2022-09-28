@@ -2,7 +2,7 @@ package chapter09;
 
 import java.math.BigDecimal;
 
-public class BicDecimalTest {
+public class BigDecimalTest {
 	
 	public static void main(String[] args) {
 		
