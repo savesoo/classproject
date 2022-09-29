@@ -1,5 +1,7 @@
 package chapter11;
 
+import java.util.ArrayList;
+
 //import chapter08.phone.Phone;
 //import chapter08.phone.PhoneImpl;
 
@@ -22,5 +24,6 @@ public class GenericMethodByType {
 		// byType.hello("스마트폰"); // extends Phone 에서 걸려서 작동X
 	
 	}
+
 
 }
