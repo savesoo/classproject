@@ -18,7 +18,7 @@ public class Exam4Main {
 	
 		//System.out.println(players.get(7));
 		
-		FootballPlayer player = players.get(7);
+		FootballPlayer player = players.get(7); // 데이터 가져오기
 		
 	}
 
