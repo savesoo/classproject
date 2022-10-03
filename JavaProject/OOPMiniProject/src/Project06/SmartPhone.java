@@ -49,7 +49,7 @@ public class SmartPhone {
 
 		int inputInfo = inputStringToInt();
 
-		if (inputInfo > 3 || inputInfo ==0) {
+		if (inputInfo > 3 || inputInfo == 0) {
 			System.out.println("입력할 수 없는 형태입니다.");
 			return;
 		} else if (inputInfo == 3) {
@@ -72,7 +72,7 @@ public class SmartPhone {
 
 		System.out.print("생일 >");
 		birthD = reInsert();
-					
+
 		System.out.print("그룹 >");
 		group = reInsert();
 
@@ -110,9 +110,9 @@ public class SmartPhone {
 			contact = new CustomerContact(name, phoneNum, email, address, birthD, group, company, goods, position);
 
 		}
-		
-		for(Contact cnt : contacts) {
-			if(cnt!=null && cnt.getPhoneNum().equals(phoneNum)) {
+
+		for (Contact cnt : contacts) {
+			if (cnt != null && cnt.getPhoneNum().equals(phoneNum)) {
 				System.out.println("동일한 전화번호가 존재하므로 이 정보를 저장할 수 없습니다. 처음 화면으로 돌아갑니다. ");
 				return;
 			}
@@ -136,14 +136,7 @@ public class SmartPhone {
 		System.out.print("수정할 이름을 입력해주세요.");
 		name = insertName();
 
-		int index = -1;
-
-		for (int i = 0; i < countNum; i++) {
-			if (contacts[i].getName().equals(name)) {
-				index = i;
-				break;
-			}
-		}
+		int index = getIndex(name);
 
 		if (index == -1) {
 			System.out.println("해당하는 정보가 없습니다.");
@@ -158,10 +151,10 @@ public class SmartPhone {
 
 		System.out.println("수정할 정보를 선택해주세요.");
 		System.out.println("1. 회사 정보 2. 거래처 정보 3. 수정 취소");
-		
+
 		int inputInfo = inputStringToInt();
-		
-		if (inputInfo > 3 || inputInfo ==0) {
+
+		if (inputInfo > 3 || inputInfo == 0) {
 			System.out.println("입력할 수 없는 형태입니다.");
 			return;
 		} else if (inputInfo == 3) {
@@ -172,11 +165,11 @@ public class SmartPhone {
 		System.out.println("기본 정보를 수정합니다.");
 		System.out.print("전화번호 > (현 정보: " + contacts[index].getPhoneNum() + " )");
 		phoneNum = insertPhoneNum();
-		
-		if(contacts[index].getPhoneNum().equals(phoneNum)) {
+
+		if (contacts[index].getPhoneNum().equals(phoneNum)) {
 			System.out.println("동일한 데이터가 존재합니다. 메뉴로 돌아갑니다.");
 			return;
-		} 
+		}
 
 		System.out.print("이메일 > (현 정보: " + contacts[index].getEmail() + " )");
 		email = reInsert();
@@ -223,8 +216,7 @@ public class SmartPhone {
 			position = reInsert();
 
 			contact = new CustomerContact(name, phoneNum, email, address, birthD, group, company, goods, position);
-		} 
-		
+		}
 
 		contacts[index] = contact;
 
@@ -244,22 +236,20 @@ public class SmartPhone {
 		System.out.print("삭제를 원하는 정보의 이름 항목을 입력해주세요.");
 		String name = insertName();
 
-		for (int i = 0; i < countNum; i++) {
-			if (contacts[i].getName().equals(name)) {
-				// contacts[i] = contacts[--countNum];
-				// contacts[countNum] = null;
-
-				contacts[i] = contacts[countNum - 1];
-				contacts[countNum - 1] = null;
-				countNum--;
-				System.out.println("삭제를 완료하였습니다.");
-				return;
-			}
+		int index = getIndex(name);
+		
+		// 입력한 이름이 기존 데이터에 없는 경우
+		if (index==-1) {
+			System.out.println("해당하는 정보가 없습니다.");
+			return;
 		}
-
-		System.out.println("해당하는 정보가 없습니다.");
-
+		
+		contacts[index] = contacts[countNum - 1]; // 삭제하고자 하는 인덱스를 찾아 맨 끝에 있는 데이터를 덮어쓰기
+		contacts[countNum - 1] = null; // 이때 맨 끝에 있던 데이터는 중복되므로 null 처리(=삭제)
+		countNum--; // 맨 끝의 데이터는 삭제되었으므로 현재 위치(인덱스)는 감소
+		System.out.println("삭제를 완료하였습니다.");
 	}
+
 
 	// 검색하여 정보 출력
 	void searchContract() {
@@ -320,16 +310,15 @@ public class SmartPhone {
 
 	}
 
-	
 	// 생일을 int 타입으로 설정할 경우
 	int inputBirth() {
 		int result = 0;
-		
-		while(true) {
+
+		while (true) {
 			try {
-				
+
 				String temp = scan.nextLine();
-				
+
 				if (temp != null && temp.trim().length() == 8 && Pattern.matches("^[0-9]*$", temp)) {
 					result = Integer.parseInt(temp);
 					break;
@@ -342,13 +331,13 @@ public class SmartPhone {
 		}
 		return result;
 	}
-	
+
 	// 숫자 외 데이터 입력 받았을 때 예외 처리
 	int inputStringToInt() {
-		
-		int result = 0; 
+
+		int result = 0;
 		String str = scan.nextLine(); // string을 입력 받아서 str에 저장
-		
+
 		try {
 			result = Integer.parseInt(str); // str이라는 string을 정수형으로 변환
 			// result = Integer.parseInt(scan.nextLine()); // string을 입력 받아서 바로 정수형으로 변환
@@ -357,50 +346,63 @@ public class SmartPhone {
 		}
 		return result;
 	}
-	
+
 	// 이름 입력시 영문자와 한글만 허용
 	String insertName() {
-		
+
 		String result = null;
-		
+
 		while (true) {
 			result = scan.nextLine();
 			try {
-				if (Pattern.matches("^[a-zA-Z가-힣]*$", result)==true) {
+				if (Pattern.matches("^[a-zA-Z가-힣]*$", result) == true) {
 					break;
 				} else {
 					throw new Exception("한글 및 영대소문자만 입력 가능합니다. 다시 입력해주세요.");
 				}
-				
+
 			} catch (Exception e) {
 				System.out.println(e.getMessage());
 			}
 		}
-		
+
 		return result;
-		
+
 	}
-	
-	
+
 	// 전화번호 형식에 맞지 않을 때 예외 처리
 	String insertPhoneNum() {
-		
+
 		String result = null;
-		
+
 		while (true) {
 			result = scan.nextLine();
 			try {
-				if(Pattern.matches("^\\d{3}-\\d{4}-\\d{4}+$", result)) {
+				if (Pattern.matches("^\\d{3}-\\d{4}-\\d{4}+$", result)) {
 					break;
 				} else {
 					throw new Exception("010-0000-0000 형식으로만 입력 가능합니다. 다시 입력해주세요. ");
 				}
-				
+
 			} catch (Exception e) {
 				System.out.println(e.getMessage());
 			}
 		}
 		return result;
+	}
+
+	// 입력된 값과 비교해 해당 인덱스를 반환
+	int getIndex(String name) {
+
+		int index = -1;
+
+		for (int i = 0; i < countNum; i++) {
+			if (contacts[i].getName().equals(name)) {
+				index = i;
+				break;
+			}
+		}
+		return index;
 	}
 
 }
