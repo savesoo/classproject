@@ -48,7 +48,7 @@ public class SmartPhone {
 		String name = sc.nextLine();
 
 		// 이름 검색을 통해 index 찾기
-		int searchIndex = -1; // 현재 걺색의 결과는 없다!
+		int searchIndex = -1; // 현재 검색의 결과는 없다!
 
 		// 데이터 찾기
 		for (int i = 0; i < numOfContact; i++) {
