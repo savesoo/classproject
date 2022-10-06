@@ -243,7 +243,7 @@ public class HashMapSmartPhone implements ISmartPhone{
 			return;
 
 		} else if (c.getName().equals(searchName)) {
-			contacts.remove(c);
+			contacts.remove(searchName);
 			System.out.println("삭제가 완료되었습니다.");
 		}
 
