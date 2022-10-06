@@ -59,7 +59,14 @@ public class SmartPhone {
 
 		System.out.println("기본 정보를 입력합니다.");
 		System.out.print("이름 >");
+		
 		name = insertName();
+		
+		// 이름 중복 방지->기존에 저장된 이름이 있는 경우 재입력
+		if(getIndex(name)!=-1) {
+			System.out.println("이미 동일한 이름이 저장되어 있습니다. 처음 화면으로 돌아갑니다.");
+			return;
+		}
 
 		System.out.print("전화번호 >");
 		phoneNum = insertPhoneNum();
@@ -165,11 +172,6 @@ public class SmartPhone {
 		System.out.println("기본 정보를 수정합니다.");
 		System.out.print("전화번호 > (현 정보: " + contacts[index].getPhoneNum() + " )");
 		phoneNum = insertPhoneNum();
-
-		if (contacts[index].getPhoneNum().equals(phoneNum)) {
-			System.out.println("동일한 데이터가 존재합니다. 메뉴로 돌아갑니다.");
-			return;
-		}
 
 		System.out.print("이메일 > (현 정보: " + contacts[index].getEmail() + " )");
 		email = reInsert();
@@ -356,7 +358,10 @@ public class SmartPhone {
 			result = scan.nextLine();
 			try {
 				if (Pattern.matches("^[a-zA-Z가-힣]*$", result) == true) {
-					break;
+					if(getIndex(result)!=-1) {
+						System.out.println("동일하게 저장된 이름이 이미 존재합니다. 다시 입력해주세요.");
+						break;
+					}
 				} else {
 					throw new Exception("한글 및 영대소문자만 입력 가능합니다. 다시 입력해주세요.");
 				}
