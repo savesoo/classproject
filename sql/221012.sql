@@ -10,7 +10,7 @@ desc dept;
 select * --ename -- *
 from emp;
 
-select * deptno, job, sal, ename
+select deptno, job, sal, ename
 from emp;
 
 
