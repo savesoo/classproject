@@ -39,6 +39,7 @@ from emp e join salgrade s
 on e.sal between s.losal and s.hisal
 ;
 
+-- 판매 내역: 판매 정보, 판매 서적의 정보, 고객의 정보, 주문 이력
 select o.orderdate, c.name, b.bookname, b.price, o.saleprice
 from orders o join customer c 
 on o.custid=c.custid
