@@ -60,7 +60,8 @@ public class FootballPlayer implements Serializable {
 		fbPlayers.add(new FootballPlayer("Shim", 4, "blue", 26));
 		fbPlayers.add(new FootballPlayer("Lee", 5, "Orange", 28));
 
-		// 2. 이 인스턴스 들을 파일로 저장하는 기능을 만들어 봅시다.
+		
+		// 2. 이 인스턴스들을 파일로 저장하는 기능을 만들어 봅시다.
 
 		ObjectOutputStream outputStream = null;
 
