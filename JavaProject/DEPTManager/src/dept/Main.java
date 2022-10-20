@@ -4,10 +4,12 @@ import java.util.Scanner;
 
 public class Main {
 	
+	public static Scanner sc = new Scanner(System.in);
 	public static void main(String[] args) {
 		
-		Controller controller = new Controller();
-		Scanner sc = new Scanner(System.in);
+		//List list = new List();
+		Command command = new Command();
+		
 		
 		while(true) {
 			
@@ -16,6 +18,36 @@ public class Main {
 			System.out.println("메뉴를 입력하세요. >>");
 			int select = Integer.parseInt(sc.nextLine());
 			
+			//list.list.get(select).process();
+			command.command.get(select).process();
+
+			
+//			switch(select) {
+//			case 1:
+//				//controller.select();
+//				new SelectController().process();
+//				break;
+//			case 2:
+//				//controller.selectByDeptno();
+//				new SelectByController().process();
+//				break;
+//			case 3:
+//				//controller.insert();
+//				new InsertController().process();
+//				break;
+//			case 4:
+//				//controller.update();
+//				new UpdateControllr().process();
+//				break;
+//			case 5:
+//				//controller.delete();
+//				new DeleteController().process();
+//				break;
+//			case 6:
+//				//controller.exit();
+//				new ExitController().process();
+//				
+//			}
 			
 		}
 		
