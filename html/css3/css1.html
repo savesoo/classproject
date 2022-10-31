@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        /*
+        선택자 { 속성 이름 : 속성 값; 속성이름:값; ... }
+        */
+
+        /* 전체 선택 */
+        * {
+            color: cornflowerblue;
+        }
+
+        /* 태그 선택자 */
+        h1 {
+            font-size: 24px;
+            background-color: blanchedalmond;
+        }
+        p {
+            background-color: blanchedalmond;
+            color: darkcyan;
+            font-weight: bold;
+        }
+
+        h1, p {
+            font-size: 16px;
+            margin: 0;
+            padding: 0;
+            font-style: normal;
+        }
+
+        div {
+
+            border: 1px solid #000000;
+            margin: 10px;
+
+        }
+
+        /* 아이디 선택자 */
+        #header {
+            background-color: lightblue;
+            padding: 10px;
+        }
+
+        #aside {
+            background-color: aliceblue;
+            color: steelblue;
+            width: 100px;
+            height: 100px;
+        }
+
+        #content {
+            background-color: #000000;
+            color: #ffffff;
+        }
+
+        #footer {
+            background-color: deeppink;
+            color: ghostwhite;
+            font-size: 12px;
+            text-align: center;
+        }
+
+        /* 클래스 속성 선택 */
+        .font_bold {
+            font-weight: bold;
+        }
+
+        .font_italic {
+            font-style: italic;
+        }
+
+        .font_size32 {
+            font-size: 32px;
+        }
+
+        /* 속성 선택자 */
+        input[type] {
+            padding: 10px;
+            font-size: 17px;
+        }
+
+        input[type=text] {
+            background-color: lightgray;
+        }
+
+        input[type=password] {
+            background-color: thistle;
+        }
+
+        img[src] {
+            margin: 10px;
+        }
+
+        img[src$=jpg] {
+            border: 5px solid rosybrown;
+        }
+
+        img[src$=png] {
+            border: 5px solid olivedrab;
+        }
+
+        /* 범위를 지정해서 선택하는 자손/후손 선택자 */
+        /* 자손 선택자 */
+        #div1>h1 {
+            color: forestgreen;
+        }
+        /* 후손 선택자 */
+        #div1 h1 {
+            background-color: gainsboro;
+        }
+
+        #div1>h1, div1>h2 {
+            margin: 20px;
+        }
+
+        /* 동일한 위치(뎁스)에서 태그를 선택 : 동위 선택자 */
+        /* 기준 -> 선택자 */
+        #div2>h1 + h2 {
+            color: rgb(41, 231, 136);
+        }
+
+        #div2>h1 ~ h2 {
+            background-color: darkorchid;
+        }
+
+        /* 반응 선택자 */
+        h3 {
+            border: 3px solid #000000;
+        }
+
+        h3:hover {
+            background-color: violet;
+            color: mediumvioletred;
+            padding: 20px;
+            font-size: 22px;
+        }
+
+        h3:active {
+            font-size: 32px;
+            color: darkmagenta;
+        }
+
+        /* 상태 선택자 */
+        #uname {
+            outline: 0;
+            border-top: 0;
+            border-bottom: 0;
+            border-left: 0;
+            border-right: 0;
+        }
+
+        #uname:focus {
+            border: 10px solid deeppink;
+        }
+
+        #chk:checked {
+            width: 30px;
+            height: 30px;
+        }
+
+        #uname:disabled {
+            background-color: palegreen;
+        }
+
+        #menuCheck + div {
+            width: 300px;
+            background-color: greenyellow;
+            display: none;
+
+            overflow: hidden;
+        }
+
+        #menuCheck {
+            display: none;
+        }
+
+        #menuCheck:checked + div {
+            width: 300px;
+            background-color: lightpink;
+            display: block;
+        }
+
+        #menuLabel:hover {
+            /* display: block; */
+            background-color: plum;
+            cursor: pointer;
+        }
+
+        #menuList {
+            list-style: none;
+            overflow: hidden;
+        }
+
+        #menuList>li {
+            float: left;
+            padding: 10px 20px;
+            /* border: 1px solid gray; */
+            background-color: #eeeeee;
+        }
+
+        #menuList>li:first-child {
+            /* border-radius : 좌측상단 우측상단 우측하단 좌측하단 순*/
+            border-radius: 20px 0 0 20px;
+        }
+        #menuList>li:last-child {
+            border-radius: 0 20px 20px 0;
+        }
+
+        #menuList>li:nth-child(2n) {
+            /* background-color: lightblue; */
+        }
+
+        #menuList>li:nth-child(2n+1) {
+            /* background-color: lemonchiffon; */
+        }
+
+        p::selection {
+            background-color: darkblue;
+            color: whitesmoke;
+        }
+
+        a:link {
+            color: darkslateblue;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: darkorange;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        a:visited {
+            color: darkorchid;
+        }
+
+        a:active {
+            color: forestgreen;
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <ul id="menuList">
+        <li><a href="#">home</a></li>
+        <li><a href="http://naver.com">네이버</a></li>
+        <li><a href="https://www.github.com">github</a></li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+    </ul>
+
+    <ul id="menuList2">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+    </ul>
+
+    <hr>
+
+    <label id="menuLabel" for="menuCheck">check</label> 
+    <input type="checkbox" id="menuCheck">
+    <div>
+        <h4>게임 타이틀</h4>
+        <p>최근 가장 유행하는 게임 사이퍼즈!</p>
+    </div>
+
+
+    <hr>
+
+
+    <input type="text" id="uname" disabled>
+    <br>
+    <input type="checkbox" id="chk">
+
+
+    <hr>
+
+    <h3>action</h3>
+    <hr>
+
+    <div id="div2">
+        <h1>Header - 1</h1>
+        <h2>Header - 2</h2>
+        <h2>Header - 2</h2>
+        <h2>Header - 2</h2>
+        <h2>Header - 2</h2>
+    </div>
+
+    <hr>
+
+    <div id="div1">
+        <h1>div - heading</h1>
+        <h2>div - heading2</h2>
+        <ul>
+            <li><h1>li - heading</h1></li>
+            <li>li - 2</li>
+            <li>li - 3</li>
+        </ul>
+    </div>
+
+
+    <hr>
+
+    <img src="../html5/rabbit1.jpg" height="100">
+    <img src="../html5/rabbit2.jpg" height="100">
+
+    <hr>
+
+    <input type="text"> <input type="password">
+
+    <hr>
+
+    <div id="header" class="font_bold font_italic font_size32">header</div>
+    <div id="aside" class="font_size32">aside</div>
+    <div id="content" class="font_italic">content</div>
+    <div id="footer" class="font_bold font_italic font_size32">footer</div>
+
+    <hr>
+
+    <h1> 제목 </h1>
+    <p>
+        내용~ 너를 위한 나를 위한 우리를 위한 아이폰~!!
+    </p>
+</body>
+</html>
