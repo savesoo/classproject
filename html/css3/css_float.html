@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .box1 {
+            width: 100px;
+            height: 100px;
+
+            border: 3px solid #aaa;
+
+            float: left;
+        }
+
+        footer {
+            border: 1px solid #eee;
+            background-color: #aaa;
+
+            clear: both;
+        }
+
+        .box2 {
+            width: 100px;
+            height: 100px;
+
+            border: 3px solid #000;
+
+            /* float: right; */
+        }
+        #footer {
+            background-color: aquamarine;
+        }
+        #wrap {
+            width: 1000px;
+            overflow: hidden; 
+            /* float과 함께 사용시 div 영역을 벗어나면 float 속성 적용되지 않는 효과 */
+        }
+
+        #box1 {
+            width: 194px; /* border의 사이즈만큼 빼줘야하기 때문에 너비에 딱 맞게 영역을 주면 안됨 */
+            float: left;
+        }
+        #box2 {
+            width: 780px;
+            float: right;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div id="wrap">
+        <div id="box1" class="box2">aside</div>
+        <div id="box2" class="box2">contents</div>
+    </div>
+    <div id="footer">footer</div>
+
+    <hr>
+
+    <div class="box1">1</div>
+    <div class="box1">2</div>
+    <footer>footer</footer>
+
+</body>
+</html>
