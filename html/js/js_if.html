@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+
+    const date = new Date();
+    console.log(date);
+    console.log(date.toDateString());
+    console.log(date.toString());
+
+    console.log('년도', date.getFullYear());
+    console.log('월', date.getMonth()+1);  // 0~11까지 가져오므로 +1 해줌
+    console.log('일', date.getDate());
+    console.log('시간', date.getHours());
+    console.log('분', date.getMinutes());
+    console.log('초', date.getSeconds());
+
+    // 현재 시각에 따라
+    // 오전과 오후를 구분하는 프로그램
+    if(date.getHours()>12) {
+        console.log('PM');
+    } else {
+        console.log('AM');
+    }
+
+    let msg = date.getHours()>12 ? '오후입니다.' : '오전입니다.'; // 삼항연산자
+    console.log(msg);
+
+    let number = -10;
+
+    if(number > 0) {
+        console.log('양수');
+    } else if(number < 0) {
+        console.log('음수');
+    } else {
+        console.log('0');
+    }
+
+    // 짝수 홀수 판별 프로그램
+    switch (number%2) {
+        case 1:
+            console.log('홀수');
+            break;
+        case 0:
+            console.log('짝수');
+            break;
+    }
+
+    let num // =1000;
+
+    console.log('num', num); // undefined
+
+    num = num || 100; // Boolean 표현식 || Boolean 표현식이 거짓일 때 실행할 문장
+    console.log('num', num); // num의 논리값 
+
+    num = num && 1000; // false일 때 boolean 표현식 && 표현식이 참일 때 실행할 문장
+    console.log('num', num); // and 연산
+
+
+</script>

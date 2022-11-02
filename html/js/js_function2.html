@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+
+    function callTenTimes(callback) {
+        for(let i=0; i<10; i++) {
+            console.log(i+1);
+        }
+
+        // 위의 작업이 처리된 후 이 부분이 실행되길 원함
+        for(let index = 0; index<10; index++) {
+            callback();
+        }
+    }
+
+    let fn = function() {
+        console.log('외부 함수');
+    }
+
+    /* callTenTimes(fn);
+
+    callTenTimes(function() {
+        console.log('real');
+    }); */
+
+    //////////////////////////////////////////////////
+
+    const arr = [1, 2, 3, 4, 5];
+
+    arr.forEach(function(num, index) {
+        console.log(index, num);
+    });
+
+    console.log('');
+
+    let arr1 = arr.map(function(num, index) {
+        return num*num;
+    });
+
+    //arr1.forEach(console.log);
+    arr1.forEach(function(num, index) {
+        console.log(index, num);
+    });
+
+
+    // filter로 값을 거르고 map으로 변화시킴(컨트롤)
+    let arr2 = arr.filter(function(num, index) {
+        return num%2 == 0;
+    }).map(function(num, index) {
+        return num+10;
+    });
+
+    console.log('');
+
+    // 반복하며 또 다른 처리 실행
+    arr2.forEach(function(num, index) {
+        console.log(index, num);
+    });
+
+
+</script>
