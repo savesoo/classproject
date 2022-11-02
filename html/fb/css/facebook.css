@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Noto+Sans+KR:wght@500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+
+    width: 100%;
+}
+
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+
+    /*line-height: 100%;*/
+    margin: 0 auto;
+
+    background-color: #f0f2f5;
+
+}
+
+div {
+    display: block;
+}
+
+.upperwrap {
+    width: auto;
+    height: 720px;
+    overflow: hidden;
+    position: relative;
+
+    margin-left: 69px;
+    padding-bottom: 112px;
+    padding-top: 72px;
+    align-content: center;
+}
+
+
+
+.mainbox {
+    padding-top: 100px;
+    box-sizing: border-box;
+    width: 80%;
+    align-content: center;
+}
+
+
+.present {
+    float: left;
+    width: 45%;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-top: 50px;
+
+    font-size: 28px;
+    font-weight: normal;
+    line-height: 32px;
+
+    display: inline-block;
+
+}
+
+.present img {
+    width: 300px;
+    height: 105px;
+    margin-left: -30px;
+}
+
+p {
+    color: #1c1e21;
+}
+
+.access_user {
+    float: right;
+    width: 45%;
+    margin-right: 6px;
+
+    text-align: center;
+}
+
+form {
+    padding: 20px 10px 28px 10px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0px 2px 4px #aaa;
+
+    width: 396px;
+    height: 349px;
+    margin: 40px 0;
+}
+
+.login {
+    font-family: inherit;
+
+}
+
+input{
+    margin: 10px;
+}
+
+
+.text {
+    width: 330px;
+    height: 22px;
+    line-height: 16px;
+    vertical-align: middle;
+    padding: 14px 16px;
+    font-size: 17px;
+
+    border-radius: 10px;
+    border: 1px solid #dddfe2;
+    color: #1d2129;
+    background-color: #ffffff;
+
+} 
+
+
+.login input[type=button] {
+    width: 364px;
+    height: 48px;
+    line-height: 48px;
+    padding: 0 16px;
+
+    border: none;
+    border-radius: 6px;
+
+    font-size: 20px;
+    font-weight: bold;
+
+    color: #ffffff;
+    background-color: #1877f2;
+    cursor: pointer;
+
+    display: inline-block;
+
+}
+
+.forgot_pw {
+    color: #1877f2;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    margin: 10px;
+    text-decoration-line: none;
+}
+
+.line {
+    padding: 10px 0;
+    margin-top: 5px;
+    border-bottom: 1px solid #aaa;
+}
+
+.create_account input[type=button] {
+    width: 144px;
+    height: 48px;
+    line-height: 48px;
+    padding: 0 16px;
+    margin-top: 28px;
+
+    border: none;
+    border-radius: 6px;
+
+    font-size: 17px;
+    font-weight: bold;
+
+    color: #ffffff;
+    background-color: #42b72a;
+    cursor: pointer;
+    
+    position: relative;
+
+}
+
+.create_page {
+    width: 396px;
+    display: block;
+    border-top: none;
+    margin: 20px 0 0;
+
+    font-size: 14px;
+    font-weight: normal;
+    font-family: SFProText-Regular, Helvetica, Arial, sans-serif;
+    color: #1c1e21;
+    text-align: center;
+
+}
+
+.create_page a {
+    color: #1c1e21;
+    font-size: 14px;
+    font-weight: 600;
+
+
+}
+
+.footer {
+    list-style: none;
+
+    padding: 20px 0 0;
+    margin: 0 auto;
+    width: auto;
+
+    font-family: inherit;
+    font-size: 11px;
+    line-height: 1.1;
+
+    color: #8a8d91;
+    background-color: #ffffff;
+
+}
+
+.lowerwrap {
+    /*width: 980px;*/
+    height: 160px;
+    margin-left: 69px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    font-size: 11px;
+    align-content: center;
+
+}
+
+ul {
+    padding: 8 0 0px;
+    margin-left: -20px;
+    float: left;
+    overflow: hidden;
+    display: block;
+
+    list-style: none;
+    width: auto;
+
+}
+
+ul>li {
+    float: left;
+
+    width: 80px;
+    text-align: center;
+    align-items: center;
+}
+
+ul>li>a {
+    color: #8a8d91;
+    font-size: 12px;
+    font-family: inherit;
+    line-height: 1.1;
+    text-decoration-line: none;
+    margin-right: 0;
+    align-items: center;
+    float: left;
+
+}
+
+.fline {
+    padding: 10px 0;
+    margin-top: 10px;
+    border-bottom: 1px solid #aaa;
+}
