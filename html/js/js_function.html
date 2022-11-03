@@ -45,7 +45,7 @@
             console.log('연산 불가');
         }
 
-        num1 = num1 || 0;  // false일 때 || 이 값을 넣어줌
+        num1 = num1 || 0;  // 결과값이 유효하지 않을 때 || 이 값을 넣어줌
         num2 = num2 || 0;
 
         return num1+num2;
@@ -93,9 +93,9 @@
         console.log(items);
     }
 
-    fn3(1, 2);
-    fn3(1, 2, 3);
-    fn3(1, 2, 3, 4);
+    fn3(1, 2); // items -> [2]
+    fn3(1, 2, 3); // items -> [3]
+    fn3(1, 2, 3, 4); // items -> [3,4]
 
     function fn4(...items){
         console.log(items);

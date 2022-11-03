@@ -13,12 +13,13 @@
 
 <script>
 
+    // 매개변수로 함수를 받는 callback 함수
     function callTenTimes(callback) {
         for(let i=0; i<10; i++) {
             console.log(i+1);
-        }
+        } 
 
-        // 위의 작업이 처리된 후 이 부분이 실행되길 원함
+        // 원하는 시점에 (=위의 작업이 처리된 후) 이 부분이 실행되길 원함
         for(let index = 0; index<10; index++) {
             callback();
         }
@@ -26,13 +27,13 @@
 
     let fn = function() {
         console.log('외부 함수');
-    }
+    }  // 1~10 출력 후 실행 콘솔 출력
 
     /* callTenTimes(fn);
 
     callTenTimes(function() {
         console.log('real');
-    }); */
+    }); */ 
 
     //////////////////////////////////////////////////
 
@@ -56,7 +57,7 @@
 
     // filter로 값을 거르고 map으로 변화시킴(컨트롤)
     let arr2 = arr.filter(function(num, index) {
-        return num%2 == 0;
+        return num%2 == 0; // 배열 안의 값 중에 추출해서 처리해야 하는 것
     }).map(function(num, index) {
         return num+10;
     });

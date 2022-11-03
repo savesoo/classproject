@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>브라우저 객체 모델 Document</title>
+
+    <script>
+
+        //let h1 = document.querySelector('h1'); 
+        //console.log(h1); // null 나옴
+        // why? body 실행 시점에 아직 만들어지지 않음!
+
+        /*        
+        window.onload = function() {
+            let h1 = document.querySelector('h1'); 
+        console.log(h1);
+        }
+        */
+        // 따라서 반드시 전부 로드된 후에 호출되어야 출력 가능!
+        
+
+        // 이벤트 설정
+        //document.addEventListener('이벤트 이름', 핸들러 함수);
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // 문서객체 생성
+            let h1 = document.querySelector('h1'); // 가장 첫번째 것에 적용
+            //console.log(h1, typeof h1);
+            //console.log(h1.textContent); //텍스트 안의 요소
+            //console.log(h1.innerHTML); // 태그 포함한 html까지 출력
+            //console.log(h1.innerText); // 텍스트만 출력
+
+            h1.textContent = 'HEADER'; // 요소 변경
+
+            h1.style.backgroundColor = 'blue';
+            h1.style.color = 'white';
+            h1.style.padding = '10px';
+            h1.style.margin = '20px';
+            h1.style.fontSize = 'small';
+
+             //////////////////////////////////////////////
+
+            let headers = document.querySelectorAll('h1'); // 배열 형식
+            //console.log(headers);
+            headers.forEach((item) => {
+                item.textContent = 'header'
+                item.style.backgroundColor = 'red'
+                item.style.color = 'white';
+            } );
+
+            let header = document.getElementById('header');
+            header.textContent = 'last Header';
+
+            let div = document.querySelector('#msg');
+            //div.textContent = '안녕하세요';
+            //div.innerHTML = '<h1>안녕하세요!</h1>'; 
+            div.textContent = '<h1>안녕하세요!</h1>'; 
+
+
+            //////////////////////////////////////////////
+            // 속성 조작
+            let link = document.querySelector('a');
+            let href = link.getAttribute('href'); // 속성 가져오기
+            console.log('href', href);
+            link.setAttribute('href', 'https://www.google.com'); // 변경
+            link.setAttribute('link-index', 1); // 새로운 속성 부여
+
+            let index = link.getAttribute('link-index');
+            console.log('index', index);
+
+            // 동적 요소 생성 -> 추가
+            let newElement = document.createElement('h2');
+            newElement.textContent = '동적으로 생성한 h2 태그';
+            newElement.style.backgroundColor = 'black';
+            newElement.style.color = 'green';
+            newElement.style.height = '100px';
+           // newElement.setAttribute('height', 100); 이미지일 때 사용
+
+            // target : 보모  태그 캐스팅
+            let wrap = document.querySelector('#wrap');
+
+            wrap.appendChild(newElement);
+
+            let newImg = document.createElement('img');
+            newImg.setAttribute('src', '../html5/rabbit1.jpg');
+            newImg.setAttribute('width', '200');
+
+            wrap.appendChild(newImg);
+
+            // 문서객체 제거
+            let body = document.body
+            let removeTarget = document.querySelector('h3');
+
+            body.removeChild(removeTarget);
+
+        });
+
+    </script>
+
+</head>
+<body>
+    
+    
+
+
+    <hr>
+
+    <h3>문서객체 조작</h3>
+
+    <div id="wrap"></div>
+
+    <hr>
+
+    <h2><a href="https://www.naver.com">네이버??</a></h2>
+
+    <div id="msg">
+
+    </div>
+
+    <h1><i>안녕하세요</i></h1>
+    <h1>안녕하세요</h1>
+    <h1>안녕하세요</h1>
+    <h1>안녕하세요</h1>
+    <h1 id="header">안녕하세요</h1>
+    
+</body>
+</html>

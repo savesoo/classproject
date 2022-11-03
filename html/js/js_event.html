@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>브라우저 객체 모델 event</title>
+
+    <script>
+
+        let cnt; // 변수생성
+
+        // 이벤트 설정
+        //document.addEventListener('이벤트 이름', 핸들러 함수);
+        document.addEventListener('DOMContentLoaded', () => {
+
+            ///////////////////////////////////////
+            // 글자수 체크 : keyup
+            cnt = document.querySelector('#cnt'); // 로드 됐을 때 호출
+            const textarea = document.querySelector('textarea'); // 호출
+            textarea.addEventListener('keyup', listener); // 함수 따로 생성
+
+            const select = document.querySelector('select');
+            const pMsg = document.querySelector('#selectMsg');
+
+            select.addEventListener('change', (event) => {
+
+                const options = event.currentTarget.options;
+                //console.log(options);
+                const index = event.currentTarget.options.selectedIndex;
+                //console.log(index);
+                let msg = `select : ${options[index].textContent}`;
+                console.log(msg);
+
+                pMsg.textContent = msg;
+
+            });
+
+            ///////////////////////////////////////////////
+            // radio : checked
+            const rMsg = document.querySelector('#checkedMsg');
+            const radios = document.querySelectorAll('input[name=lang]'); // 호출
+
+            radios.forEach((radio) => {
+                radio.addEventListener('change', (event) => {
+                    const currentRadio = event.currentTarget;
+                    if(currentRadio.checked) {
+                        rMsg.textContent = `checked : ${currentRadio.value}`;
+                    }
+                });
+            });
+            
+        });
+
+            // 이벤트 리스너 메소드에 사용할 콜백함수
+            // 이벤트 설정(전달)하는 함수와 연결되도록 생성
+        const listener = function(event){
+            const length = event.currentTarget.value.length; // String의 length
+            console.log(event.currentTarget.value);
+            cnt.textContent = `글자 수 : ${length}`;
+        }
+
+    </script>
+
+</head>
+<body>
+
+    <h3>관심 있는 언어를 선택하세요</h3>
+    <input type="radio" name="lang" value="java"> java <br>
+    <input type="radio" name="lang" value="SQL"> SQL <br>
+    <input type="radio" name="lang" value="HTML5"> HTML5 <br>
+    <p id="checkedMsg"></p>
+
+    <hr>
+
+    <select>
+        <option value="java">JAVA</option>
+        <option value="sql">SQL</option>
+        <option value="html">HTML5</option>
+        <option value="css">CSS</option>
+        <option value="javascript">Javascript</option>
+    </select>
+    <p id="selectMsg"></p>
+
+    <hr>
+
+    <h4>키보드 이벤트</h4>
+    <textarea></textarea>
+    <h4 id="cnt">글자 수 : </h4>
+
+</body>
+</html>

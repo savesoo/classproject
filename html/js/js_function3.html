@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>콜백함수_화살표함수</title>
+    
+    <script>
+
+        // 코드 실행 함수
+        let willEval = 'var num = 10;';
+        willEval += 'alert(num);';
+        
+        eval(willEval);
+
+        //////////////////////////////////////////////////////
+
+        // setTimeout과 setInterval
+
+        // setTmeout(함수(){}, 1000분의 1초 단위)
+        //setTimeout(function(){console.log('setTimeout')}, 3000);
+        let id1 = setTimeout(() => console.log('setTimeout'), 3000);
+        clearTimeout(id1); // set을 clear(예약취소)
+
+        let n = 0;
+
+        let id2 = setInterval(function(){
+
+            console.log('1.5초마다 출력', n++)
+
+            if(n === 3){
+                console.log('3번 출력 완료로 반복 중지');
+                clearInterval(id2);
+            }
+
+        }, 1500);
+
+
+        //////////////////////////////////////////////////////
+
+        // 콜백함수와 화살표 함수
+        let arr = [1, 2, 3, 4, 5];
+
+        arr.forEach(function(val){
+            console.log(val)
+        }); // 함수 들어가서 출력
+
+        console.log('');
+
+        // 화살표 함수
+        // 하나 있을 때는 forEach 안에 괄호 사용하지 않을 수 있음
+        arr.forEach( (val, index) => {
+            console.log(val, index)
+        });
+
+        console.log('');
+
+        arr.filter( (val, index) => {
+            // ....
+            return val%2 == 1 // 홀수만 출력
+            } )
+            .map(val => val*val ) // 출력된 값에 새로운 처리 후 배열 생성
+            .forEach(console.log); // 배열 log 출력(log이므로 내용은 같음)
+
+        console.log('');
+
+        function callbackFn(num1, num2, callback){
+            return callback(num1, num2); // 밑에서 변수 + 함수 전달
+        }
+
+        // let result = callbackFn(10, 20, function(n1, n2){
+        //     // 더하기 연산 후 결과값 반환
+        //     return n1+n2;
+        // });
+
+        // 화살표 함수로 사용하기
+        // 함수명 생략, return과 함께 {} 생략
+        let result = callbackFn(10, 40, (n1, n2) => n1*n2 );
+
+        console.log('result', result);
+
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>
