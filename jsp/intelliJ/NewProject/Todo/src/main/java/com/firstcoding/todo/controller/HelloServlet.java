@@ -1,4 +1,4 @@
-package com.firstcoding.todo;
+package com.firstcoding.todo.controller;
 
 import java.io.*;
 import javax.servlet.http.*;
