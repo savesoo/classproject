@@ -1,4 +1,4 @@
-package com.firstcoding.todo.todoController;
+package todoController;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;

@@ -14,6 +14,10 @@
 <h1>로그인 페이지</h1>
 <form action="/login" method="post">
 
+    아이디 <input type="text" name="userID">
+    비밀번호 <input type="password" name="userPW">
+    이름 <input type="text" name="userName">
+
     <input type="submit" value="로그인">
 </form>
 

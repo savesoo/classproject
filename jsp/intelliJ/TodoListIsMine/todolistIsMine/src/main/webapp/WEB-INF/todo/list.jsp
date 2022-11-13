@@ -12,16 +12,33 @@
 <head>
     <title>Todo List</title>
 </head>
+<style>
+  td{
+    padding: 10px;
+  }
+</style>
 <body>
 
-
   <h1>Todo List</h1>
-  <ul>
-    <c:forEach var="num" begin="1" end="10" varStatus="stat">
-      <li><input type="checkbox" name="todoItem" value="num"><a href="/read?tno=${num}">${stat.index}</a> Todo Title 2022-11-10 DONE</li>
-      <hr>
+
+  <table>
+    <tr>
+      <td>번호</td>
+      <td>할일</td>
+      <td>기간</td>
+      <td>완료여부</td>
+    </tr>
+
+    <c:forEach var="todo" items="${todoList}">
+      <tr>
+        <td>${todo.tno}</td>
+        <td><a href="/read?tno=${todo.tno}">${todo.todo}</a></td>
+        <td>${todo.dueDate}</td>
+        <td>${todo.finished ? '완료': '진행중'}</td>
+      </tr>
     </c:forEach>
-  </ul>
+
+  </table>
 
   <button><a href="/register">목록에 추가하기</a></button>
   <button><a href="/logout">LOGOUT</a></button>
