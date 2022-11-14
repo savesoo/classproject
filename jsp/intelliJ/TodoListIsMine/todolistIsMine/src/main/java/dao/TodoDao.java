@@ -26,7 +26,7 @@ public class TodoDao {
         list = new ArrayList<>();
 
         while (rs.next()){
-            list.add(new TodoDTO(rs.getLong(1), rs.getString(2), rs.getString(3), rs.getBoolean(4)));
+            list.add(addRowToList(rs));
         }
 
         return list;
@@ -56,7 +56,7 @@ public class TodoDao {
 
 
     // todoList 수정
-    public int updateByTno(Connection conn, TodoDTO todo) throws SQLException{
+    public int updateTodo(Connection conn, TodoDTO todo) throws SQLException{
 
         int result = 0;
 
@@ -77,7 +77,7 @@ public class TodoDao {
 
 
     // todoList에서 삭제
-    public int deleteTodoList(Connection conn, TodoDTO todo) throws SQLException{
+    public int deleteTodoList(Connection conn, long tno) throws SQLException{
 
         int result = 0;
 
@@ -85,12 +85,38 @@ public class TodoDao {
 
         @Cleanup PreparedStatement pstmt = conn.prepareStatement(sql);
 
-        pstmt.setLong(1,todo.getTno());
+        pstmt.setLong(1, tno);
 
         result = pstmt.executeUpdate();
 
         return  result;
 
+    }
+
+    // 조회 (read)
+    public TodoDTO getTodoByTno(Connection conn, long tno) throws SQLException {
+
+        TodoDTO todo = null;
+
+        String sql = "select * from todo_list where tno=?";
+
+        @Cleanup PreparedStatement pstmt = conn.prepareStatement(sql);
+
+        pstmt.setLong(1, tno);
+
+        @Cleanup ResultSet rs = pstmt.executeQuery();
+
+        if(rs.next()){
+            todo = addRowToList(rs);
+        }
+
+        return todo;
+
+    }
+
+    public static TodoDTO addRowToList(ResultSet rs) throws SQLException{
+        return new TodoDTO(rs.getLong(1), rs.getString(2),
+                           rs.getString(3), rs.getBoolean(4));
     }
 
 

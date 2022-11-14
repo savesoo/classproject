@@ -6,6 +6,7 @@ import com.zaxxer.hikari.HikariDataSource;
 import java.sql.Connection;
 import java.sql.SQLException;
 
+// Connection Pool
 public class ConnectionUtil {
 
     private HikariDataSource hds;

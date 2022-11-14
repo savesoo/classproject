@@ -13,7 +13,7 @@
 <body>
 
     <h1>Todo List 등록</h1>
-    <form method="post">
+    <form action="/register" method="post">
 
         <table>
             <tr>
@@ -23,6 +23,10 @@
             <tr>
                 <td>기한</td>
                 <td><input type="date" name="dueDate"></td>
+            </tr>
+            <tr>
+                <td>진행 상태 </td>
+                <td><input type="checkbox" name="finished"></td>
             </tr>
             <tr>
                 <td></td>

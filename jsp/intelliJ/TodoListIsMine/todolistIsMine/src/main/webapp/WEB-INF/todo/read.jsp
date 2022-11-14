@@ -13,7 +13,7 @@
 <body>
 
     <h1>조회</h1>
-    <form action="/remove" method="post">
+
         <table>
             <tr>
                 <td>번호 </td>
@@ -33,9 +33,15 @@
             </tr>
         </table>
 
-        <button><a href="/modify?tno=${param.tno}">수정</a></button>
-        <input type="submit" value="삭제">
+    <form action="/modify">
+        <input type="submit" value="수정">
+        <input type="hidden" name="tno" value="${param.tno}">
         <button><a href="/list">List로</a></button>
+    </form>
+
+    <form action="/remove" method="post">
+        <input type="submit" value="삭제">
+        <input type="hidden" name="tno" value="${param.tno}">
     </form>
 
 </body>

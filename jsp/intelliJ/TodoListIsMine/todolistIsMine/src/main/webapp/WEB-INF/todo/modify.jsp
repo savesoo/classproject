@@ -8,19 +8,41 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Todo List Modify/Remove</title>
+    <title>Todo List Modify</title>
 </head>
 <body>
 
-    <h1>수정 및 삭제</h1>
+    <h1>Todo List 수정</h1>
 
     <form action="/modify" method="post">
 
-        해야할 일 <input type="text" name="todo" placeholder="내용"> <br>
-        마감일시 <input type="date" name="date"> <br>
+        <table>
+            <tr>
+                <td>번호 </td>
+                <td><input type="text" name="tno" value="${param.tno}"></td>
+            </tr>
+            <tr>
+                <td>해야할 일 </td>
+                <td><input type="text" name="todo" value="${todo.todo}"></td>
+            </tr>
+            <tr>
+                <td>기한 </td>
+                <td><input type="date" name="dueDate" value="${todo.dueDate}"></td>
+            </tr>
+            <tr>
+                <td>진행 상태 </td>
+                <td><input type="checkbox" name="finished" ${todo.finished ? 'checked' : ''} ></td>
+            </tr>
+        </table>
 
-        <input type="submit" value="수정">
+        <input type="reset">
+        <input type="submit" value="수정 완료">
 
+    </form>
+
+
+    <form action="/list">
+        <input type="submit" value="List로">
     </form>
 
 </body>

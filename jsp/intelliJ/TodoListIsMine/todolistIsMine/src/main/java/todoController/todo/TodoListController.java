@@ -1,5 +1,6 @@
-package todoController;
+package todoController.todo;
 
+import lombok.extern.log4j.Log4j2;
 import service.TodoService;
 
 import javax.servlet.RequestDispatcher;
@@ -9,26 +10,29 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.sql.SQLException;
 
+@Log4j2
 @WebServlet(name = "TodoListController", value = "/list")
 public class TodoListController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // 목록 -> 조회
-        System.out.println("list doGet()");
+        log.info("list doGet()");
 
-        //request.setAttribute("todoList", new TodoService().getTodoList());
+        try {
+            request.setAttribute("todoList", new TodoService().getAllList());
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
 
         RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/todo/list.jsp");
         dispatcher.forward(request, response);
 
     }
 
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-
-
-    }
+ //   @Override
+ //   protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//    }
 
 }
