@@ -13,7 +13,7 @@ public class MemberRegisterService {
 
 	//@Autowired(required = true) // 같은 타입 찾아 자동 주입. 기본값은 ture
 	//@Qualifier("member") // 사용할 객체 선택
-	private final Dao dao;
+	private final Dao dao; // final -> 무조건 생성자 생성
 
 	public MemberRegisterService(Dao dao) {
 		this.dao = dao;
