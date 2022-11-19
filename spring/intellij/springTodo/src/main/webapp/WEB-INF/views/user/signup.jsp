@@ -44,7 +44,6 @@
     alert("비밀번호가 서로 일치하지 않습니다.");
   </script>
 </c:if>
-${param.result}
 
 </body>
 </html>
