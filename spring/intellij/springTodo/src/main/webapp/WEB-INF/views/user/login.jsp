@@ -14,7 +14,7 @@
 
 <body>
 <h1>로그인 페이지</h1>
-<form action="/todo/list" method="post">
+<form method="post">
 
     <table>
         <tr>
@@ -29,7 +29,7 @@
             <td></td>
             <td>
                 <input type="submit" value="로그인">
-                <button>회원 가입</button>
+                <button><a href="/user/signup">회원 가입</a></button>
             </td>
         </tr>
         <tr>
@@ -39,6 +39,19 @@
     </table>
 
 </form>
+
+<c:if test="${param.fail == 'notmatch'}">
+    <script>
+        alert('아이디 혹은 비밀번호가 일치하지 않습니다.');
+    </script>
+</c:if>
+
+<c:if test="${param.result == 't'}">
+    <script>
+        alert("회원가입이 완료되었습니다. 로그인을 진행해 주세요.");
+    </script>
+</c:if>
+
 
 </body>
 </html>

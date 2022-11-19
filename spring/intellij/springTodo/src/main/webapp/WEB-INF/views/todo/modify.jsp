@@ -14,7 +14,7 @@
 
     <h1>Todo List 수정</h1>
 
-    <form action="/todo/modify" method="post">
+    <form method="post">
 
         <table>
             <tr>
@@ -41,7 +41,7 @@
     </form>
 
 
-    <form action="/todo/list" method="post">
+    <form action="/todo/list">
         <input type="submit" value="List로">
     </form>
 

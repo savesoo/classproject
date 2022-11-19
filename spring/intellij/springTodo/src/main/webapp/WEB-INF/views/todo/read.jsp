@@ -39,7 +39,7 @@
         <button><a href="/todo/list">List로</a></button>
     </form>
 
-    <form method="post">
+    <form method="post" action="/todo/remove">
         <input type="submit" value="삭제">
         <input type="hidden" name="tno" value="${param.tno}">
     </form>

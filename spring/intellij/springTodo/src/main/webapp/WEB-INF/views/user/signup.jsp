@@ -6,13 +6,14 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <title>Welcome to Join with Us</title>
 </head>
 <body>
 <h1>회원가입 페이지</h1>
-<form action="/signup" method="post">
+<form method="post">
 
   <table>
     <tr>
@@ -37,6 +38,13 @@
   <input type="reset" value="내용 초기화">
 
 </form>
+
+<c:if test="${param.fail == 'check'}">
+  <script>
+    alert("비밀번호가 서로 일치하지 않습니다.");
+  </script>
+</c:if>
+${param.result}
 
 </body>
 </html>
