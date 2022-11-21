@@ -50,8 +50,15 @@ public class LoginController {
         log.info("loginRequest =>" + loginRequest);
         log.info("paramMap =>" + paramMap);
 
-        return "login/login"; // "redirect:/index" <<sendRedirect 기능
+
+        request.getSession().setAttribute("loginInfo", uid);
+
+        //return "login/login"; // "redirect:/index" <<sendRedirect 기능
+        return "redirect:/mypage/mypage1";
+
     }
+
+
 
     // 기본 경로에 하위 경로 추가하기
     @GetMapping("/info")  // http://localhost:8080/login/info
