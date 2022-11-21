@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.sql.SQLException;
 
 @Log4j2
@@ -39,10 +40,15 @@ public class LoginController {
         String userID = req.getParameter("userID");
         String userPW = req.getParameter("userPW");
 
+        HttpSession session = req.getSession(); // 세션 생성
+
         boolean isLogin = false;
 
         try {
+
             isLogin = service.loginByIDPW(userDTO);
+            session.setAttribute("loginInfo", userID);
+
         } catch (SQLException e) {
             e.printStackTrace();
         }

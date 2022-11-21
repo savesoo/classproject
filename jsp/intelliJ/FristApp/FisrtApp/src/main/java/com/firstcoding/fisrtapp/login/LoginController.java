@@ -52,7 +52,6 @@ public class LoginController extends HttpServlet {
 
 
 
-
         HttpSession session = request.getSession();
 
         // 로그인 처리

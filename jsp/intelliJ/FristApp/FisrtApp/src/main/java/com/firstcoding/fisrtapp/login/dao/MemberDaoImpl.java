@@ -58,6 +58,7 @@ public class MemberDaoImpl implements MemberDao {
         int result = pstmt.executeUpdate();
 
         return result;
+
     }
 
     @Override
@@ -78,4 +79,5 @@ public class MemberDaoImpl implements MemberDao {
         }
         return member;
     }
+
 }
