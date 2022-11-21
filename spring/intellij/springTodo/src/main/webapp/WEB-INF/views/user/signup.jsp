@@ -12,8 +12,9 @@
     <title>Welcome to Join with Us</title>
 </head>
 <body>
+
 <h1>회원가입 페이지</h1>
-<form method="post">
+<form method="post" enctype="multipart/form-data">
 
   <table>
     <tr>
@@ -31,6 +32,10 @@
     <tr>
       <td>이름 </td>
       <td><input type="text" name="userName"></td>
+    </tr>
+    <tr>
+      <td>프로필 사진 </td>
+      <td><input type="file" name="userProfile"></td>
     </tr>
   </table>
 

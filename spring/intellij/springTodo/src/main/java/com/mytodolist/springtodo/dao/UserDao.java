@@ -37,13 +37,14 @@ public class UserDao {
     //회원가입 -> user table에 insert
     public int insertUser(Connection conn, UserDTO user) throws SQLException{
 
-        String sql = "insert into todo_user(userID, userPW, userName) values (?, ?, ?)";
+        String sql = "insert into todo_user(userID, userPW, userName, userProfile) values (?, ?, ?, ?)";
 
         @Cleanup PreparedStatement pstmt = conn.prepareStatement(sql);
 
         pstmt.setString(1, user.getUserID());
         pstmt.setString(2, user.getUserPW());
         pstmt.setString(3, user.getUserName());
+        pstmt.setString(4, user.getUserProfile().getOriginalFilename());
         return pstmt.executeUpdate();
 
     }

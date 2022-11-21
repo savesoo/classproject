@@ -8,8 +8,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import javax.servlet.http.HttpServletRequest;
+import java.io.File;
+import java.io.IOException;
 import java.sql.SQLException;
 
 @Log4j2
@@ -31,12 +35,22 @@ public class SignUpController {
     }
 
     @PostMapping
-    public String postSignUpForm(@ModelAttribute UserDTO userDTO,HttpServletRequest req){
+    public String postSignUpForm(@ModelAttribute UserDTO userDTO, MultipartHttpServletRequest req) throws IOException {
 
         log.info(" signup get ... ");
 
         String userPW = req.getParameter("userPW");
         String checkPW = req.getParameter("checkPW");
+        MultipartFile userProfile = req.getFile("userProfile"); // 파일 첨부
+
+        log.info("userProfile = " + userProfile.getOriginalFilename());
+
+        // web 경로
+        String uploadURI = "/image";
+        // 시스템 경로
+        String getRealPath = req.getSession().getServletContext().getRealPath(uploadURI);
+        // 저장
+        userProfile.transferTo(new File("getRealPath", userProfile.getOriginalFilename()));
 
         try {
             service.signupTodoUser(userDTO);

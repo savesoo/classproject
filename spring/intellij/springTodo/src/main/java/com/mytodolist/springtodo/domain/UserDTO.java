@@ -1,6 +1,7 @@
 package com.mytodolist.springtodo.domain;
 
 import lombok.*;
+import org.springframework.web.multipart.MultipartFile;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -14,5 +15,6 @@ public class UserDTO {
     private String userPW;
     private String checkPW;
     private String userName;
+    private MultipartFile userProfile;
 
 }
