@@ -18,7 +18,7 @@ public class SignUpController {
 
     private final UserService service;
 
-    public SignUpController(UserService service, SignUpService upService) {
+    public SignUpController(UserService service) {
         this.service = service;
     }
 
