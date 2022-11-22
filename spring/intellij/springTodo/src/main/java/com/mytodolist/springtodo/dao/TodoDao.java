@@ -1,6 +1,7 @@
 package com.mytodolist.springtodo.dao;
 
 
+import com.mytodolist.springtodo.domain.LoginInfo;
 import com.mytodolist.springtodo.domain.TodoDTO;
 import lombok.Cleanup;
 import org.springframework.stereotype.Repository;
@@ -10,6 +11,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 @Repository
@@ -18,9 +20,11 @@ public class TodoDao {
     // todoList 전체 출력
     public List<TodoDTO> selectAll(Connection conn) throws SQLException {
 
-        String sql = "select * from todo_list";
+        String sql = "select * from todo_list "; //where userID=?
 
         @Cleanup PreparedStatement pstmt = conn.prepareStatement(sql);
+        //pstmt.setString(1, "userID");
+
         @Cleanup ResultSet rs = pstmt.executeQuery();
 
         List<TodoDTO> list = null;
@@ -41,14 +45,13 @@ public class TodoDao {
 
         int result = 0;
 
-        String sql = "insert into todo_list(tno, todo, dueDate, finished) values(?, ?, ?, ?) ";
+        String sql = "insert into todo_list(todo, dueDate, finished) values(?, ?, ?) ";
 
         @Cleanup PreparedStatement pstmt = conn.prepareStatement(sql);
 
-        pstmt.setLong(1, todo.getTno());
-        pstmt.setString(2, todo.getTodo());
-        pstmt.setString(3, todo.getDueDate());
-        pstmt.setBoolean(4, todo.isFinished());
+        pstmt.setString(1, todo.getTodo());
+        pstmt.setString(2, todo.getDueDate());
+        pstmt.setBoolean(3, todo.isFinished());
 
         result = pstmt.executeUpdate();
 
@@ -117,8 +120,10 @@ public class TodoDao {
     }
 
     public static TodoDTO addRowToList(ResultSet rs) throws SQLException{
-        return new TodoDTO(rs.getLong(1), rs.getString(2),
-                           rs.getString(3), rs.getBoolean(4));
+        return new TodoDTO(rs.getLong(1),
+                           rs.getString(2),
+                           rs.getString(3),
+                           rs.getBoolean(4));
     }
 
 

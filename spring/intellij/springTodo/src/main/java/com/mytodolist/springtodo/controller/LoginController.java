@@ -26,7 +26,7 @@ public class LoginController {
     }
 
     @GetMapping
-    public void getLoginForm(){
+    public void getLoginForm() {
 
         log.info("login get ... ");
 
@@ -37,28 +37,24 @@ public class LoginController {
 
         log.info("login post ... ");
 
-        String userID = req.getParameter("userID");
-        String userPW = req.getParameter("userPW");
-
-        HttpSession session = req.getSession(); // 세션 생성
-
-        boolean isLogin = false;
-
         try {
 
-            isLogin = service.loginByIDPW(userDTO);
-            session.setAttribute("loginInfo", userID);
+            UserDTO user = service.loginByIDPW(userDTO.getUserID(), userDTO.getUserPW());
+
+            if (user != null) {
+                HttpSession session = req.getSession(); // 세션 생성
+                session.setAttribute("loginInfo", user.toLoginInfo()); // 이 데이터만 가지고 다닐 것
+
+                return "redirect:/user/myInfo";
+
+            }
 
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
-        if (isLogin) {
-            return "redirect:/todo/list";
-        } else {
-            log.info("login fail notmatch ... ");
-            return "redirect:/user/login?fail=notmatch";
-        }
+        log.info("login fail notmatch ... ");
+        return "redirect:/user/login?fail=notmatch";
 
     }
 }

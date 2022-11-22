@@ -14,8 +14,10 @@ public class AuthCheckInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
 
+        // 세션 확인하여 로그인 정보 없으면 false 처리
         HttpSession session = request.getSession(false);
 
+        // 회원 로그인 여부 체크 = session 혹은 longinInfo 유무
         if(session!=null && session.getAttribute("loginInfo")!=null){
 
             log.info(" >>>> 로그인 유지 상태 >>>> ");

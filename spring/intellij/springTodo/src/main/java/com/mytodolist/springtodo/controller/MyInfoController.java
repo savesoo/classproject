@@ -6,22 +6,21 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-
 @Log4j2
 @Controller
-@RequestMapping("/user/logout")
-public class LogoutController {
+@RequestMapping("/user/myInfo")
+public class MyInfoController {
 
     @GetMapping
-    public String getloginFormAfterLogout(HttpSession session){
-
-        log.info("logout get ... ");
-
-        session.invalidate();
-        return "redirect:/user/login";
-
+    public void getMyInfoPage(){
+        log.info(" MyInfo get ... ");
     }
 
+    @PostMapping
+    public String postMyInfo(){
+
+        log.info(" MyInfo post ... ");
+        return "redirect:/todo/list";
+
+    }
 }

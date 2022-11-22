@@ -18,6 +18,8 @@
     <mvc:resources mapping="/js/**" location="/js/"></mvc:resources>
     <mvc:resources mapping="/image/**" location="/image/"></mvc:resources>
 
+    <mvc:resources mapping="/uploadfile/**" location="/uploadfile/"></mvc:resources>
+
 
     <!-- viewResolver -->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
@@ -30,6 +32,10 @@
     <mvc:interceptors>
         <mvc:interceptor>
             <mvc:mapping path="/todo/**"/>
+            <bean class="com.mytodolist.springtodo.interceptor.AuthCheckInterceptor"/>
+        </mvc:interceptor>
+        <mvc:interceptor>
+            <mvc:mapping path="/user/myInfo"/>
             <bean class="com.mytodolist.springtodo.interceptor.AuthCheckInterceptor"/>
         </mvc:interceptor>
     </mvc:interceptors>

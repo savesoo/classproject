@@ -13,32 +13,33 @@
 </head>
 
 <body>
-<h1>로그인 페이지</h1>
-<form method="post">
 
-    <table>
-        <tr>
-            <td>아이디 </td>
-            <td> <input type="text" name="userID"></td>
-        </tr>
-        <tr>
-            <td>비밀번호 </td>
-            <td><input type="password" name="userPW"></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td>
-                <input type="submit" value="로그인">
-                <button><a href="/user/signup">회원 가입</a></button>
-            </td>
-        </tr>
-        <tr>
-            <td></td>
-            <td><a href="#">비밀번호 찾기</a></td>
-        </tr>
-    </table>
+    <h1>로그인 페이지</h1>
+    <form method="post">
 
-</form>
+        <table>
+            <tr>
+                <td>아이디 </td>
+                <td> <input type="text" name="userID"></td>
+            </tr>
+            <tr>
+                <td>비밀번호 </td>
+                <td><input type="password" name="userPW"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="submit" value="로그인">
+                    <button><a href="/user/signup">회원 가입</a></button>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><a href="#">비밀번호 찾기</a></td>
+            </tr>
+        </table>
+
+    </form>
 
 <c:if test="${param.fail == 'notmatch'}">
     <script>

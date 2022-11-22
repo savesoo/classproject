@@ -21,6 +21,7 @@
 
   <h1>Todo List</h1>
 
+  <form action="/todo/register">
   <table>
     <tr>
       <td>번호</td>
@@ -40,8 +41,14 @@
 
   </table>
 
-  <button><a href="/todo/register">목록에 추가하기</a></button>
-  <button><a href="/user/logout">LOGOUT</a></button>
+    <input type="submit" value="목록에 추가하기">
+
+  </form>
+
+  <form action="/user/myInfo">
+    <input type="submit" value="회원 페이지로 이동">
+    <button><a href="/user/logout">LOGOUT</a></button>
+  </form>
 
 </body>
 </html>

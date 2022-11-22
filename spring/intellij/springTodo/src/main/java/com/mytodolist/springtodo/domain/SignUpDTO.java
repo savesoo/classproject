@@ -1,5 +1,6 @@
 package com.mytodolist.springtodo.domain;
 
+
 import lombok.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -9,21 +10,25 @@ import org.springframework.web.multipart.MultipartFile;
 @Getter
 @ToString
 @Builder
-public class UserDTO {
+public class SignUpDTO {
 
     private String userID;
     private String userPW;
     private String checkPW;
     private String userName;
-    private String userProfile; // DB와 연결되는 항목
+    private MultipartFile userProfile;
 
 
-    // 로그인 정보를 확인
-    public LoginInfo toLoginInfo(){
-        return LoginInfo.builder()
+    // file 업로드시 data 충돌 방지
+    public UserDTO toUser(){
+
+        UserDTO user = UserDTO.builder()
                 .userID(this.userID)
+                .userPW(this.userPW)
                 .userName(this.userName)
-                .userProfile(this.userProfile)
                 .build();
+
+        return user;
     }
+
 }

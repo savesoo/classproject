@@ -14,5 +14,6 @@ public class TodoDTO {
     private String todo;
     private String dueDate;
     private boolean finished;
+    //private String userID;
     
 }
