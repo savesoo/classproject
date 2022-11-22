@@ -37,7 +37,7 @@ public class CookieController {
 
     // Spring 내부에서의 쿠키 처리 -> response를 매개변수로 받음!
     @GetMapping("/make")
-    public String makeCookie(HttpServletResponse response){ // responcse는 서비스에 전달 가능
+    public String makeCookie(HttpServletResponse response){ // response는 서비스에 전달 가능
 
         Cookie cookie = new Cookie("userName", "kim");
         cookie.setPath("/");
