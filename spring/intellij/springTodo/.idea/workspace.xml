@@ -5,10 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="38595011-d30b-4657-abeb-87fff4aa56f3" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mytodolist/springtodo/domain/UserSignUpDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../jsp/intelliJ/FristApp/FisrtApp/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../../../jsp/intelliJ/FristApp/FisrtApp/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mytodolist/springtodo/controller/SignUpController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mytodolist/springtodo/controller/SignUpController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mytodolist/springtodo/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mytodolist/springtodo/dao/UserDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mytodolist/springtodo/domain/UserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mytodolist/springtodo/domain/UserDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/spt/servlet-context.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/spt/servlet-context.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/user/signup.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/user/signup.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../sql/20221013MYSQL.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../../../sql/20221013MYSQL.sql" afterDir="false" />
     </list>
@@ -197,6 +199,7 @@
       <workItem from="1668990729213" duration="25000" />
       <workItem from="1669019758460" duration="2275000" />
       <workItem from="1669046250507" duration="3785000" />
+      <workItem from="1669075218151" duration="3926000" />
     </task>
     <servers />
   </component>

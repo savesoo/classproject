@@ -35,7 +35,7 @@ public class SignUpController {
     }
 
     @PostMapping
-    public String postSignUpForm(@ModelAttribute UserDTO userDTO, MultipartHttpServletRequest req) throws IOException {
+    public String postSignUpForm(@ModelAttribute UserDTO userDTO, MultipartHttpServletRequest req) {
 
         log.info(" signup get ... ");
 
@@ -48,9 +48,14 @@ public class SignUpController {
         // web 경로
         String uploadURI = "/image";
         // 시스템 경로
-        String getRealPath = req.getSession().getServletContext().getRealPath(uploadURI);
+        String dirRealPath = req.getSession().getServletContext().getRealPath(uploadURI);
+        log.info(dirRealPath);
         // 저장
-        userProfile.transferTo(new File("getRealPath", userProfile.getOriginalFilename()));
+        try {
+            userProfile.transferTo(new File(dirRealPath, userProfile.getOriginalFilename()));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
 
         try {
             service.signupTodoUser(userDTO);

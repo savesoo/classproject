@@ -13,36 +13,36 @@
 </head>
 <body>
 
-<h1>회원가입 페이지</h1>
-<form method="post" enctype="multipart/form-data">
+  <h1>회원가입 페이지</h1>
+  <form method="post" enctype="multipart/form-data">
 
-  <table>
-    <tr>
-      <td>아이디 </td>
-      <td> <input type="text" name="userID"></td>
-    </tr>
-    <tr>
-      <td>비밀번호 </td>
-      <td><input type="password" name="userPW"></td>
-    </tr>
-    <tr>
-      <td>재입력 </td>
-      <td><input type="password" name="checkPW"></td>
-    </tr>
-    <tr>
-      <td>이름 </td>
-      <td><input type="text" name="userName"></td>
-    </tr>
-    <tr>
-      <td>프로필 사진 </td>
-      <td><input type="file" name="userProfile"></td>
-    </tr>
-  </table>
+    <table>
+      <tr>
+        <td>아이디 </td>
+        <td> <input type="text" name="userID"></td>
+      </tr>
+      <tr>
+        <td>비밀번호 </td>
+        <td><input type="password" name="userPW"></td>
+      </tr>
+      <tr>
+        <td>재입력 </td>
+        <td><input type="password" name="checkPW"></td>
+      </tr>
+      <tr>
+        <td>이름 </td>
+        <td><input type="text" name="userName"></td>
+      </tr>
+      <tr>
+        <td>프로필 사진 </td>
+        <td><input type="file" name="userProfile"></td>
+      </tr>
+    </table>
 
-  <input type="submit" value="회원가입">
-  <input type="reset" value="내용 초기화">
+    <input type="submit" value="회원가입">
+    <input type="reset" value="내용 초기화">
 
-</form>
+  </form>
 
 <c:if test="${param.fail == 'check'}">
   <script>
