@@ -50,7 +50,7 @@ public class UserService implements ITodo{
             String dirRealPath = request.getSession().getServletContext().getRealPath(dirURI);
 
             // 저장하기 전에 새로운 이름으로 만들어 저장 - 중복 방지
-            newFileName = signup.getUserName() + signup.getUserProfile().getOriginalFilename();
+            newFileName = signup.getUserName() + "_" + signup.getUserProfile().getOriginalFilename();
             log.info(newFileName);
 
             // 저장
