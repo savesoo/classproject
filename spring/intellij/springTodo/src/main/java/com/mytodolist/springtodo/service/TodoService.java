@@ -22,55 +22,55 @@ public class TodoService implements ITodo {
     }
 
     // List
-    public List<TodoDTO> getAllList() throws SQLException {
+    public List<TodoDTO> getAllList(String userID) throws SQLException {
 
         @Cleanup Connection conn = ConnectionUtil.getInstance().getConnection();
 
-        List<TodoDTO> list = dao.selectAll(conn);
+        List<TodoDTO> list = dao.selectAll(conn, userID);
 
         return list;
     }
 
 
     // register
-    public int registToList(TodoDTO todo) throws SQLException {
+    public int registToList(TodoDTO todo, String userID) throws SQLException {
 
         @Cleanup Connection conn = ConnectionUtil.getInstance().getConnection();
 
-        int result = dao.insertTodoList(conn, todo);
+        int result = dao.insertTodoList(conn, todo, userID);
 
         return result;
     }
 
 
     // modify
-    public int updateTodo(TodoDTO todo) throws SQLException {
+    public int updateTodo(TodoDTO todo, String userID) throws SQLException {
 
         @Cleanup Connection conn = ConnectionUtil.getInstance().getConnection();
 
-        int result = dao.updateTodo(conn, todo);
+        int result = dao.updateTodo(conn, todo, userID);
 
         return result;
     }
 
 
     // remove
-    public int removeTodo(long tno) throws SQLException {
+    public int removeTodo(long tno, String userID) throws SQLException {
 
         @Cleanup Connection conn = ConnectionUtil.getInstance().getConnection();
 
-        int result = dao.deleteTodoList(conn, tno);
+        int result = dao.deleteTodoList(conn, tno, userID);
 
         return  result;
     }
 
 
     // read
-    public TodoDTO getTodoByTno(long tno) throws  SQLException {
+    public TodoDTO getTodoByTno(long tno, String userID) throws  SQLException {
 
         @Cleanup Connection conn = ConnectionUtil.getInstance().getConnection();
 
-        TodoDTO todo = dao.getTodoByTno(conn, tno);
+        TodoDTO todo = dao.getTodoByTno(conn, tno, userID);
 
         return todo;
 

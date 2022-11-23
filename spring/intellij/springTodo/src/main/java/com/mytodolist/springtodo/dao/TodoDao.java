@@ -18,12 +18,12 @@ import java.util.List;
 public class TodoDao {
 
     // todoList 전체 출력
-    public List<TodoDTO> selectAll(Connection conn) throws SQLException {
+    public List<TodoDTO> selectAll(Connection conn, String userID) throws SQLException {
 
-        String sql = "select * from todo_list "; //where userID=?
+        String sql = "select * from todo_list where userID=?";
 
         @Cleanup PreparedStatement pstmt = conn.prepareStatement(sql);
-        //pstmt.setString(1, "userID");
+        pstmt.setString(1, userID);
 
         @Cleanup ResultSet rs = pstmt.executeQuery();
 
@@ -41,17 +41,18 @@ public class TodoDao {
 
 
     // todoList에 추가
-    public int insertTodoList(Connection conn, TodoDTO todo) throws SQLException {
+    public int insertTodoList(Connection conn, TodoDTO todo, String userID) throws SQLException {
 
         int result = 0;
 
-        String sql = "insert into todo_list(todo, dueDate, finished) values(?, ?, ?) ";
+        String sql = "insert into todo_list(todo, dueDate, finished, userID) values(?, ?, ?, ?) ";
 
         @Cleanup PreparedStatement pstmt = conn.prepareStatement(sql);
 
         pstmt.setString(1, todo.getTodo());
         pstmt.setString(2, todo.getDueDate());
         pstmt.setBoolean(3, todo.isFinished());
+        pstmt.setString(4, userID);
 
         result = pstmt.executeUpdate();
 
@@ -61,11 +62,11 @@ public class TodoDao {
 
 
     // todoList 수정
-    public int updateTodo(Connection conn, TodoDTO todo) throws SQLException{
+    public int updateTodo(Connection conn, TodoDTO todo, String userID) throws SQLException{
 
         int result = 0;
 
-        String sql = "update todo_list set todo=?, dueDate=?, finished=? where tno=?";
+        String sql = "update todo_list set todo=?, dueDate=?, finished=? where tno=? and userID=?";
 
         @Cleanup PreparedStatement pstmt = conn.prepareStatement(sql);
 
@@ -73,6 +74,7 @@ public class TodoDao {
         pstmt.setString(2, todo.getDueDate());
         pstmt.setBoolean(3, todo.isFinished());
         pstmt.setLong(4, todo.getTno());
+        pstmt.setString(5, userID);
 
         result = pstmt.executeUpdate();
 
@@ -82,15 +84,16 @@ public class TodoDao {
 
 
     // todoList에서 삭제
-    public int deleteTodoList(Connection conn, long tno) throws SQLException{
+    public int deleteTodoList(Connection conn, long tno, String userID) throws SQLException{
 
         int result = 0;
 
-        String sql = "delete from todo_list where tno=?";
+        String sql = "delete from todo_list where tno=? and userID=?";
 
         @Cleanup PreparedStatement pstmt = conn.prepareStatement(sql);
 
         pstmt.setLong(1, tno);
+        pstmt.setString(2, userID);
 
         result = pstmt.executeUpdate();
 
@@ -99,15 +102,16 @@ public class TodoDao {
     }
 
     // 조회 (read)
-    public TodoDTO getTodoByTno(Connection conn, long tno) throws SQLException {
+    public TodoDTO getTodoByTno(Connection conn, long tno, String userID) throws SQLException {
 
         TodoDTO todo = null;
 
-        String sql = "select * from todo_list where tno=?";
+        String sql = "select * from todo_list where tno=? and userID=?";
 
         @Cleanup PreparedStatement pstmt = conn.prepareStatement(sql);
 
         pstmt.setLong(1, tno);
+        pstmt.setString(2, userID);
 
         @Cleanup ResultSet rs = pstmt.executeQuery();
 
