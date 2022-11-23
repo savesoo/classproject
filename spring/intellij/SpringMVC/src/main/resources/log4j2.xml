@@ -6,9 +6,20 @@
         </Console>
     </Appenders>
     <Loggers>
+
+        <!-- 컨테이너의 bean 생성 흐름 확인 가능 -->
+        <logger name="org.springframework" level="debug" additivity="false">
+            <AppenderRef ref = "Console"/>
+        </logger>
+
+        <logger name="com.firstcoding.mvc.springmvc" level="info" additivity="false">
+            <AppenderRef ref = "Console"/>
+        </logger>
+
         <Root level="info">
             <AppenderRef ref="Console"/>
         </Root>
+
     </Loggers>
 </Configuration>
 

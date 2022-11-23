@@ -22,6 +22,13 @@
             <param-value>/WEB-INF/spring/servlet-context.xml</param-value> <!--여러개 등록 가능-->
         </init-param>
 
+
+        <!-- tomcat 제공 페이지 대신 커스텀 페이지 지정을 위한 파람 설정 -->
+        <init-param>
+            <param-name>throwExceptionIfNoHandlerFound</param-name>
+            <param-value>true</param-value>
+        </init-param>
+
         <load-on-startup>1</load-on-startup> <!--프로그램 시작시 서블릿을 1번 실행-->
 
 
@@ -46,5 +53,6 @@
         <filter-name>encoding</filter-name>
         <servlet-name>appServlet</servlet-name>
     </filter-mapping>
+
 
 </web-app>
