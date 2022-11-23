@@ -46,5 +46,17 @@
         <property name="defaultEncoding" value="UTF-8"/>
     </bean>
 
+    <!-- data 변환을 위한 Formatter 등록 -->
+    <bean id="conversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
+        <property name="formatters">
+            <set>
+                <bean class="com.mytodolist.springtodo.formatter.LocalDateFormatter"/>
+                <bean class="com.mytodolist.springtodo.formatter.CheckBoxFormatter"/>
+            </set>
+        </property>
+    </bean>
+
+    <mvc:annotation-driven conversion-service="conversionService"/>
+
 
 </beans>
