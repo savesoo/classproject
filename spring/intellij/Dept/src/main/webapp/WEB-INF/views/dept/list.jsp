@@ -21,28 +21,34 @@
     <h1>dept list</h1>
     <hr>
 
-    <button><a href="dept/register">부서 등록</a></button>
+    <button><a href="/dept/register">부서 등록</a></button>
+    <br>
 
-    <form method="post">
-        <table border="1">
-            <tr>
-                <th>부서 번호</th>
-                <th>부서 이름</th>
-                <th>부서 위치</th>
-                <th>관리</th>
-            </tr>
+    <table border="1">
+        <tr>
+            <th>부서 번호</th>
+            <th>부서 이름</th>
+            <th>부서 위치</th>
+            <th>관리</th>
+        </tr>
 
-            <c:forEach items="${deptList}" var="dept">
-            <tr>
-                <td>${dept.deptno}</td>
-                <td>${dept.dname}</td>
-                <td>${dept.loc}</td>
-                <td>수정 / 삭제</td>
-            </tr>
-            </c:forEach>
-        </table>
-    </form>
+        <c:forEach items="${deptList}" var="dept">
+        <tr>
+            <td>${dept.deptno}</td>
+            <td>${dept.dname}</td>
+            <td>${dept.loc}</td>
+            <td> <a href="/dept/edit?no=${dept.deptno}">수정</a> / <a onclick="deleteDept(${dept.deptno});" style="cursor: pointer">삭제</a></td>
+        </tr>
+        </c:forEach>
+    </table>
 
+<script>
+    function  deleteDept(no){
+        if(confirm("정말 삭제하시겠습니까?")){
+            location.href = '/dept/delete?deptno='+no;
+        }
+    }
+</script>
 
 </body>
 </html>
