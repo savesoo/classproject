@@ -1,0 +1,35 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.app.manager.mapper.DeptMapper"> <!--인터페이스 풀네임으로 정의-->
+
+    <!-- id는 메소드의 이름과 일치 resultType은 row를 어디 넣을 건지를 장의 -->
+    <select id="selectAll" resultType="com.app.manager.domain.DeptDTO">
+        select * from dept
+    </select>
+
+    <!-- insert -->
+    <!-- 정수 반환하므로 resultType 생략 가능 -->
+    <insert id="insertDept" parameterType="com.app.manager.domain.DeptDTO">
+        insert into dept values (#{deptno}, #{dname}, #{loc})
+    </insert>
+
+    <!-- 전달되는 파라미터(매개변수)가 한개일 때는 #{} 안의 이름이 같지 않아도 상관 없음! -->
+    <select id="selectBydeptno" resultType="com.app.manager.domain.DeptDTO">
+        select * from dept where deptno=#{deptno}
+    </select>
+
+    <!-- update -->
+    <!-- 전달되는 파라미터(매개변수)가 객체형(하나 이상)이므로 parameterType 사용 -->
+    <update id="updateDept" parameterType="com.app.manager.domain.DeptDTO">
+        update dept set dname=#{dname}, loc=#{loc} where deptno=#{deptno}
+    </update>
+
+    <!-- delete -->
+    <delete id="deletBydeptno">
+        delete from dept where deptno=#{deptno}
+    </delete>
+
+
+</mapper>
