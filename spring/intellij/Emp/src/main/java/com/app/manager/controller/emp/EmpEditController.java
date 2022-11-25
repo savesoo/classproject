@@ -1,6 +1,7 @@
 package com.app.manager.controller.emp;
 
 import com.app.manager.domain.EmpDTO;
+import com.app.manager.domain.JobListDTO;
 import com.app.manager.service.emp.EmpEditService;
 import com.app.manager.service.emp.EmpListService;
 import com.app.manager.service.emp.EmpReadService;
@@ -37,6 +38,7 @@ public class EmpEditController {
         model.addAttribute("saved", empReadService.selectByEmpno(empno));
         model.addAttribute("deptList", deptListService.getList()); // 필요한 데이터 사용을 위해 가져옴(deptno + dname)
         model.addAttribute("mgrList", empListService.getEmpList()); // mgr
+        model.addAttribute("jobList", new JobListDTO().getJobList());
 
 
     }

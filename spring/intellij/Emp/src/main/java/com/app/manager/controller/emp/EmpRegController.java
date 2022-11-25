@@ -1,6 +1,8 @@
 package com.app.manager.controller.emp;
 
 import com.app.manager.domain.EmpDTO;
+import com.app.manager.domain.JobListDTO;
+import com.app.manager.service.dept.DeptListService;
 import com.app.manager.service.emp.EmpListService;
 import com.app.manager.service.emp.EmpRegService;
 import lombok.extern.log4j.Log4j2;
@@ -22,12 +24,17 @@ public class EmpRegController {
     @Autowired(required = false)
     private EmpListService empListService;
 
+    @Autowired(required = false)
+    private DeptListService deptListService;
+
     @GetMapping
     public void getRegForm(Model model){
         log.info(" get emp regForm >>>> ");
         log.info(empListService.getEmpList().size());
 
         model.addAttribute("empList", empListService.getEmpList()); // mgr 번호 -> 이름으로 출력
+        model.addAttribute("deptList", deptListService.getList());
+        model.addAttribute("jobList", new JobListDTO().getJobList());
 
     }
 

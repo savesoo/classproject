@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: E495
@@ -26,8 +27,24 @@
               <td><input type="text" name="ename"></td>
           </tr>
           <tr>
+              <td>직급</td>
+              <td>
+                  <select name="job">
+                      <c:forEach items="${jobList}" var="job">
+                          <option value="${job}">${job}</option>
+                      </c:forEach>
+                  </select>
+              </td>
+          </tr>
+          <tr>
               <td>관리자 번호</td>
-              <td><input type="number" name="mgr"></td>
+              <td>
+                  <select name="mgr">
+                    <c:forEach items="${empList}" var="mgr">
+                      <option value="${mgr.empno}">${mgr.ename}</option>
+                    </c:forEach>
+                  </select>
+              </td>
           </tr>
           <tr>
               <td>입사일</td>
@@ -43,17 +60,17 @@
           </tr>
           <tr>
               <td>부서번호</td>
-              <td><select name="deptno">
-                <option value="10">10:ACCOUNTING</option>
-                <option value="20">20:RESEARCH</option>
-                <option value="30">30:SALES</option>
-                <option value="40">40:OPERATIONS</option>
-              </select>
+              <td>
+                  <select name="deptno">
+                      <c:forEach items="${deptList}" var="dept">
+                          <option value="${dept.deptno}"> ${dept.deptno}:${dept.dname} </option>
+                      </c:forEach>
+                  </select>
               </td>
           </tr>
           <tr>
               <td></td>
-              <td><input type="submit" value="제출"></td>
+              <td><input type="submit" value="등록"></td>
           </tr>
 
       </table>

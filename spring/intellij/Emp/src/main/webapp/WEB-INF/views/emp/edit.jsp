@@ -27,8 +27,25 @@
               <td><input type="text" name="ename" value="${saved.ename}"></td>
           </tr>
           <tr>
+              <td>직급</td>
+              <td>
+                  <select name="job">
+                      <c:forEach items="${jobList}" var="job">
+                          <option value="${job}" ${job == saved.job ? "selected" : "" }>${job}</option>
+                      </c:forEach>
+                  </select>
+              </td>
+          </tr>
+          <tr>
               <td>관리자 번호</td>
-              <td><input type="number" name="mgr" value="${saved.mgr}"></td>
+              <td>
+                  <select name="mgr">
+                      <option value="">-</option>
+                      <c:forEach items="${mgrList}" var="mgr">
+                          <option value="${mgr.empno}" ${mgr.empno==saved.mgr?"selected" : ""}> ${mgr.ename} </option>
+                      </c:forEach>
+                  </select>
+              </td>
           </tr>
           <tr>
               <td>입사일</td>

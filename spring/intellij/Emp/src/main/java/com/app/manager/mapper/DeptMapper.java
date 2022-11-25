@@ -1,6 +1,7 @@
 package com.app.manager.mapper;
 
 import com.app.manager.domain.DeptDTO;
+import com.app.manager.domain.DeptSearchOption;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
@@ -22,5 +23,10 @@ public interface DeptMapper {
 
     // 삭제
     int deletBydeptno(int deptno);
+
+    // ++
+    // 검색 타입과 키워드를 받아서 검색 결과를 반환
+    List<DeptDTO> selectByOption(DeptSearchOption deptSearchOption);
+
 
 }

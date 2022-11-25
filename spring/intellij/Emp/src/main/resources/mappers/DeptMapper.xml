@@ -32,4 +32,27 @@
     </delete>
 
 
+    <!-- 키워드를 통한 검색 -->
+    <select id="selectByOption"
+            parameterType="com.app.manager.domain.DeptSearchOption"
+            resultType="com.app.manager.domain.DeptDTO">
+
+        select * from dept
+
+        <where>
+
+            <if test="searchType!=null and keyword!=null">
+                <if test="searchType == 'dname' ">
+                    dname like concat('%', #{keyword}, '%')
+                </if>
+                <if test="searchType == 'loc' ">
+                    loc like concat('%', #{keyword}, '%')
+                </if>
+            </if>
+
+        </where>
+
+    </select>
+
+
 </mapper>

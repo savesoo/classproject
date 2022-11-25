@@ -44,4 +44,13 @@
     <mybatis:scan base-package="com.app.manager.mapper"></mybatis:scan>
 
 
+    <!-- 트랜잭션 설정(bean 등록) -->
+    <bean id="transactionManager"
+          class="org.springframework.jdbc.datasource.DataSourceTransactionManager"
+    >
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+    <tx:annotation-driven transaction-manager="transactionManager"/>
+
 </beans>

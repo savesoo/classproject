@@ -5,8 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="940c3e74-c932-4ee1-b669-13c94bfbcdd5" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/manager/domain/JobListDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/manager/controller/emp/EmpEditController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/manager/controller/emp/EmpEditController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/manager/controller/emp/EmpRegController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/manager/controller/emp/EmpRegController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/manager/mapper/DeptMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/manager/mapper/DeptMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mappers/DeptMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mappers/DeptMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/spring/root-context.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/spring/root-context.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/emp/edit.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/emp/edit.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/emp/regist.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/emp/regist.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../springTodo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../springTodo/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../springTodo/src/main/java/com/mytodolist/springtodo/Filter/LoginCheckFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../springTodo/src/main/java/com/mytodolist/springtodo/Filter/LoginCheckFilter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../springTodo/src/main/java/com/mytodolist/springtodo/Filter/UTF8Filter.java" beforeDir="false" />
@@ -64,20 +71,21 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/E495/Documents/GitHub/classproject/spring/intellij/Emp",
+    "last_opened_file_path": "C:/Users/E495/Documents/GitHub/classproject/Bootstrap/BootstrapSample",
     "spring.configuration.checksum": "18b1b63f8c34707921ec5027ed5699f3"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\E495\Documents\GitHub\classproject\spring\intellij\Emp\src\main\webapp\WEB-INF\views" />
+      <recent name="C:\Users\E495\Documents\GitHub\classproject\spring\intellij\Emp\src\main\java\com\app\manager\service\dept" />
+      <recent name="C:\Users\E495\Documents\GitHub\classproject\spring\intellij\Emp\src\main\java\com\app\manager\controller\dept" />
       <recent name="C:\Users\E495\Documents\GitHub\classproject\spring\intellij\Emp\src\main\resources\mappers" />
       <recent name="C:\Users\E495\Documents\GitHub\classproject\spring\intellij\Emp\src\main\webapp\WEB-INF\views\emp" />
-      <recent name="C:\Users\E495\Documents\GitHub\classproject\spring\intellij\Emp\src\main\resources" />
-      <recent name="C:\Users\E495\Documents\GitHub\classproject\spring\intellij\Emp\src\main\webapp\WEB-INF" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.app.manager.service.dept" />
       <recent name="com.app.manager.domain" />
+      <recent name="com.app.manager.service.dept" />
       <recent name="com.app.manager.mapper" />
     </key>
   </component>
@@ -182,27 +190,11 @@
       <updated>1669271295727</updated>
       <workItem from="1669271297229" duration="9707000" />
       <workItem from="1669334376108" duration="174000" />
-      <workItem from="1669334565320" duration="1010000" />
+      <workItem from="1669334565320" duration="15515000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/emp/list.jsp</url>
-          <line>15</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/emp/regist.jsp</url>
-          <line>26</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
