@@ -5,11 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="940c3e74-c932-4ee1-b669-13c94bfbcdd5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/manager/service/dept/DeptListService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Dept/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Dept/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/manager/controller/EmpEditController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/manager/controller/EmpEditController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/emp/edit.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/emp/edit.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../springTodo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../springTodo/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../springTodo/src/main/java/com/mytodolist/springtodo/Filter/LoginCheckFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../springTodo/src/main/java/com/mytodolist/springtodo/Filter/LoginCheckFilter.java" afterDir="false" />
@@ -186,7 +182,7 @@
       <updated>1669271295727</updated>
       <workItem from="1669271297229" duration="9707000" />
       <workItem from="1669334376108" duration="174000" />
-      <workItem from="1669334565320" duration="674000" />
+      <workItem from="1669334565320" duration="1010000" />
     </task>
     <servers />
   </component>
