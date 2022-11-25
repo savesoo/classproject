@@ -5,43 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="940c3e74-c932-4ee1-b669-13c94bfbcdd5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/manager/HelloServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/manager/controller/EmpDeleteController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/manager/controller/EmpEditController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/manager/controller/EmpListController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/manager/controller/EmpRegController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/manager/domain/DeptDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/manager/domain/EmpDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/manager/mapper/DeptMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/manager/mapper/EmpMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/manager/service/EmpDeleteService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/manager/service/EmpEditService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/manager/service/EmpListService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/manager/service/EmpReadService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/manager/service/EmpRegService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/log4j2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mappers/DeptMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mappers/EmpMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/spring/root-context.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/spring/servlet-context.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/emp/edit.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/emp/list.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/emp/regist.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/manager/service/dept/DeptListService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Dept/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Dept/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/manager/controller/EmpEditController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/manager/controller/EmpEditController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/emp/edit.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/emp/edit.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../springTodo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../springTodo/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../springTodo/src/main/java/com/mytodolist/springtodo/Filter/LoginCheckFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../springTodo/src/main/java/com/mytodolist/springtodo/Filter/LoginCheckFilter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../springTodo/src/main/java/com/mytodolist/springtodo/Filter/UTF8Filter.java" beforeDir="false" />
@@ -74,6 +43,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
     <option name="FILTER_WARNINGS" value="false" />
@@ -84,6 +56,7 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProjectId" id="2I11enUFuePthoW7RhRdkCNn8kN" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -95,7 +68,8 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/E495/Documents/GitHub/classproject/spring/intellij/Emp/src/main/resources/mappers"
+    "last_opened_file_path": "C:/Users/E495/Documents/GitHub/classproject/spring/intellij/Emp",
+    "spring.configuration.checksum": "18b1b63f8c34707921ec5027ed5699f3"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -106,6 +80,7 @@
       <recent name="C:\Users\E495\Documents\GitHub\classproject\spring\intellij\Emp\src\main\webapp\WEB-INF" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.app.manager.service.dept" />
       <recent name="com.app.manager.domain" />
       <recent name="com.app.manager.mapper" />
     </key>
@@ -210,6 +185,8 @@
       <option name="presentableId" value="Default" />
       <updated>1669271295727</updated>
       <workItem from="1669271297229" duration="9707000" />
+      <workItem from="1669334376108" duration="174000" />
+      <workItem from="1669334565320" duration="674000" />
     </task>
     <servers />
   </component>

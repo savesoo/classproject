@@ -3,6 +3,7 @@ package com.app.manager.controller;
 import com.app.manager.domain.EmpDTO;
 import com.app.manager.service.EmpEditService;
 import com.app.manager.service.EmpReadService;
+import com.app.manager.service.dept.DeptListService;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -23,10 +24,14 @@ public class EmpEditController {
     @Autowired(required = false)
     private EmpEditService empEditService;
 
+    @Autowired(required = false)
+    private DeptListService deptListService;
+
     @GetMapping
     public void getEditForm(@RequestParam("empno") int empno, Model model){
         log.info("get emp editForm >>>> ");
         model.addAttribute("saved", empReadService.selectByEmpno(empno));
+        model.addAttribute("deptList", deptListService.getList());
     }
 
     @PostMapping
