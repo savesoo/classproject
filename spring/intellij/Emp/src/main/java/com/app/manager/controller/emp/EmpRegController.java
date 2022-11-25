@@ -1,7 +1,8 @@
-package com.app.manager.controller;
+package com.app.manager.controller.emp;
 
 import com.app.manager.domain.EmpDTO;
-import com.app.manager.service.EmpRegService;
+import com.app.manager.service.emp.EmpListService;
+import com.app.manager.service.emp.EmpRegService;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -18,9 +19,16 @@ public class EmpRegController {
     @Autowired
     private EmpRegService empRegService;
 
+    @Autowired(required = false)
+    private EmpListService empListService;
+
     @GetMapping
-    public void getRegForm(){
+    public void getRegForm(Model model){
         log.info(" get emp regForm >>>> ");
+        log.info(empListService.getEmpList().size());
+
+        model.addAttribute("empList", empListService.getEmpList()); // mgr 번호 -> 이름으로 출력
+
     }
 
     @PostMapping
@@ -30,6 +38,7 @@ public class EmpRegController {
         log.info(empDTO);
 
         model.addAttribute(empRegService.insertEmp(empDTO));
+
         return "redirect:/emp/list";
     }
 }

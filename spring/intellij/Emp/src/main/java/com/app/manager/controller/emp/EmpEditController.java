@@ -1,8 +1,9 @@
-package com.app.manager.controller;
+package com.app.manager.controller.emp;
 
 import com.app.manager.domain.EmpDTO;
-import com.app.manager.service.EmpEditService;
-import com.app.manager.service.EmpReadService;
+import com.app.manager.service.emp.EmpEditService;
+import com.app.manager.service.emp.EmpListService;
+import com.app.manager.service.emp.EmpReadService;
 import com.app.manager.service.dept.DeptListService;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,11 +28,17 @@ public class EmpEditController {
     @Autowired(required = false)
     private DeptListService deptListService;
 
+    @Autowired(required = false)
+    private EmpListService empListService;
+
     @GetMapping
     public void getEditForm(@RequestParam("empno") int empno, Model model){
         log.info("get emp editForm >>>> ");
         model.addAttribute("saved", empReadService.selectByEmpno(empno));
-        model.addAttribute("deptList", deptListService.getList());
+        model.addAttribute("deptList", deptListService.getList()); // 필요한 데이터 사용을 위해 가져옴(deptno + dname)
+        model.addAttribute("mgrList", empListService.getEmpList()); // mgr
+
+
     }
 
     @PostMapping

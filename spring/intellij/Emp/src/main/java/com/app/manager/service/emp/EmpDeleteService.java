@@ -1,4 +1,4 @@
-package com.app.manager.service;
+package com.app.manager.service.emp;
 
 import com.app.manager.mapper.EmpMapper;
 import org.springframework.beans.factory.annotation.Autowired;

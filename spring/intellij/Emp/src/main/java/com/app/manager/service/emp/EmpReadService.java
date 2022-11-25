@@ -1,4 +1,4 @@
-package com.app.manager.service;
+package com.app.manager.service.emp;
 
 import com.app.manager.domain.EmpDTO;
 import com.app.manager.mapper.EmpMapper;
@@ -6,12 +6,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class EmpRegService {
+public class EmpReadService {
 
     @Autowired(required = false)
     private EmpMapper empMapper;
 
-    public int insertEmp(EmpDTO empDTO){
-        return empMapper.insertEmp(empDTO);
+    public EmpDTO selectByEmpno(int empno){
+        return empMapper.selectByEmpno(empno);
     }
 }
