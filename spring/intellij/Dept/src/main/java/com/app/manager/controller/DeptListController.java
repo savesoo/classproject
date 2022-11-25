@@ -16,11 +16,12 @@ public class DeptListController {
     private DeptListService service;
 
     @RequestMapping("dept/list")
-    public void getDeptList(Model model, DeptSearchOption searchOption){
+    public String getDeptList(Model model, DeptSearchOption searchOption){
 
         log.info(" get dept list ... ");
         //model.addAttribute("deptList", service.getList());
         model.addAttribute("deptList", service.getSearchList(searchOption));
+        return "dept/lists";
 
     }
 
