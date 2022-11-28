@@ -31,7 +31,7 @@
 
     <!-- 갱신된 uuid값 DB로 업데이트 -->
     <update id="updateUUID" parameterType="com.mytodolist.springtodo.domain.UserDTO">
-        update todo_user set uuid=? where user_idx=#{user_idx}
+        update todo_user set uuid=#{uuid} where user_idx=#{user_idx}
     </update>
 
 

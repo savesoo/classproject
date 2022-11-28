@@ -28,7 +28,7 @@
     <mvc:interceptors>
 
     <mvc:interceptor>
-        <mvc:mapping path="/user/**"/>
+        <mvc:mapping path="/**"/>
         <bean class="com.mytodolist.springtodo.interceptor.SessionLoginInterceptor"/>
     </mvc:interceptor>
 

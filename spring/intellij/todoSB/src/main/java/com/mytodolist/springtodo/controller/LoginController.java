@@ -30,9 +30,17 @@ public class LoginController {
     }
 
     @GetMapping
-    public void getLoginForm() {
+    public String getLoginForm(HttpSession session) {
 
         log.info("login get ... ");
+
+        // Session이 null이 아닌 경우=로그인 상태일 때는 다른 페이지로
+        if(session.getAttribute("loginInfo")!=null){
+            return "redirect:/user/myInfo";
+        }
+
+        // null인 경우
+        return "user/login";
 
     }
 
@@ -50,6 +58,7 @@ public class LoginController {
             return "redirect:user/login";
         }
 
+
         HttpSession session = req.getSession(); // 세션 생성
 
         try {
@@ -62,6 +71,8 @@ public class LoginController {
                 return "redirect:/user/login?fail=notmatch";
             }
 
+            log.info(user);
+
             String rememberMe = req.getParameter("rememberMe");
 
             // 자동로그인 on체크시 처리 부분
@@ -69,7 +80,8 @@ public class LoginController {
 
                 // uuid 쿠키에 저장하고 문자열 형태로 DB에 업데이트
                 UUID uuid = UUID.randomUUID();
-                Cookie c = new Cookie("cookie", uuid.toString());
+                log.info("uuid = " + uuid);
+                Cookie c = new Cookie("uuid", uuid.toString());
                 c.setMaxAge(60*60*24);
                 c.setPath("/");
                 res.addCookie(c);

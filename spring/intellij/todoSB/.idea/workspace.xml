@@ -5,89 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="38595011-d30b-4657-abeb-87fff4aa56f3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../SBTodo/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SBTodo/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SBTodo/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SBTodo/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SBTodo/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SBTodo/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SBTodo/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SBTodo/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SBTodo/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SBTodo/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SBTodo/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SBTodo/settings.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SBTodo/src/main/java/com/mytodolist/sbtodo/HelloServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SBTodo/src/main/java/com/mytodolist/sbtodo/controller/LoginController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SBTodo/src/main/java/com/mytodolist/sbtodo/controller/LogoutController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SBTodo/src/main/java/com/mytodolist/sbtodo/controller/MyInfoController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SBTodo/src/main/java/com/mytodolist/sbtodo/controller/SignUpController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SBTodo/src/main/java/com/mytodolist/sbtodo/controller/TodoListController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SBTodo/src/main/java/com/mytodolist/sbtodo/controller/TodoModifyController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SBTodo/src/main/java/com/mytodolist/sbtodo/controller/TodoReadController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SBTodo/src/main/java/com/mytodolist/sbtodo/controller/TodoRegisterController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SBTodo/src/main/java/com/mytodolist/sbtodo/controller/TodoRemoveController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SBTodo/src/main/java/com/mytodolist/sbtodo/domain/LoginInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SBTodo/src/main/java/com/mytodolist/sbtodo/domain/SignUpDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SBTodo/src/main/java/com/mytodolist/sbtodo/domain/TodoDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SBTodo/src/main/java/com/mytodolist/sbtodo/domain/UserDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SBTodo/src/main/java/com/mytodolist/sbtodo/formatter/CheckBoxFormatter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SBTodo/src/main/java/com/mytodolist/sbtodo/formatter/LocalDateFormatter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SBTodo/src/main/java/com/mytodolist/sbtodo/interceptor/AuthCheckInterceptor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SBTodo/src/main/java/com/mytodolist/sbtodo/interceptor/SessionLoginInterceptor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SBTodo/src/main/java/com/mytodolist/sbtodo/mapper/TodoListMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SBTodo/src/main/java/com/mytodolist/sbtodo/mapper/UserMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SBTodo/src/main/java/com/mytodolist/sbtodo/service/TodoService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SBTodo/src/main/java/com/mytodolist/sbtodo/service/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SBTodo/src/main/resources/log4j2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SBTodo/src/main/resources/mappers/TodoListMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SBTodo/src/main/resources/mappers/UserMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SBTodo/src/main/webapp/WEB-INF/spring/base-context.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SBTodo/src/main/webapp/WEB-INF/spring/servlet-context.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SBTodo/src/main/webapp/WEB-INF/views/todo/list.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SBTodo/src/main/webapp/WEB-INF/views/todo/modify.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SBTodo/src/main/webapp/WEB-INF/views/todo/read.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SBTodo/src/main/webapp/WEB-INF/views/todo/register.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SBTodo/src/main/webapp/WEB-INF/views/user/login.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SBTodo/src/main/webapp/WEB-INF/views/user/myInfo.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SBTodo/src/main/webapp/WEB-INF/views/user/signup.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SBTodo/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SBTodo/src/main/webapp/index.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SBTodo/src/test/java/ConnectionTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mytodolist/springtodo/controller/LoginController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mytodolist/springtodo/controller/LogoutController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mytodolist/springtodo/controller/MyInfoController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mytodolist/springtodo/controller/SignUpController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mytodolist/springtodo/controller/TodoModifyController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mytodolist/springtodo/controller/TodoReadController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mytodolist/springtodo/controller/TodoRegisterController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mytodolist/springtodo/controller/TodoRemoveController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mytodolist/springtodo/exception/CommonExceptionAdvice.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mytodolist/springtodo/mapper/TodoListMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mytodolist/springtodo/mapper/UserMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mytodolist/springtodo/service/SingUpService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mytodolist/springtodo/service/TodoService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mytodolist/springtodo/service/UserLoginService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mappers/TodoListMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mappers/UserMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/error/404error.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/ConnectionTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Dept/src/main/java/com/app/manager/domain/DeptDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Dept/src/main/java/com/app/manager/domain/DeptDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Dept/src/main/java/com/app/manager/service/DeptListService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Dept/src/main/java/com/app/manager/service/DeptListService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Emp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Emp/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../springTodo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../springTodo/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../springTodo/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../springTodo/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../springTodo/src/main/java/com/mytodolist/springtodo/Filter/LoginCheckFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../springTodo/src/main/java/com/mytodolist/springtodo/Filter/LoginCheckFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../springTodo/src/main/java/com/mytodolist/springtodo/Filter/UTF8Filter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../springTodo/src/main/java/com/mytodolist/springtodo/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../springTodo/src/main/java/com/mytodolist/springtodo/controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../springTodo/src/main/java/com/mytodolist/springtodo/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../springTodo/src/main/java/com/mytodolist/springtodo/dao/UserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../springTodo/src/main/java/com/mytodolist/springtodo/domain/LoginInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../springTodo/src/main/java/com/mytodolist/springtodo/domain/LoginInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../springTodo/src/main/java/com/mytodolist/springtodo/domain/UserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../springTodo/src/main/java/com/mytodolist/springtodo/domain/UserDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../springTodo/src/main/java/com/mytodolist/springtodo/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../springTodo/src/main/java/com/mytodolist/springtodo/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../springTodo/src/main/webapp/WEB-INF/spt/base-context.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../springTodo/src/main/webapp/WEB-INF/spt/base-context.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../springTodo/src/main/webapp/WEB-INF/spt/servlet-context.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../springTodo/src/main/webapp/WEB-INF/spt/servlet-context.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../springTodo/src/main/webapp/WEB-INF/views/user/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../springTodo/src/main/webapp/WEB-INF/views/user/login.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../springTodo/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../springTodo/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mytodolist/springtodo/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mytodolist/springtodo/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mytodolist/springtodo/interceptor/SessionLoginInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mytodolist/springtodo/interceptor/SessionLoginInterceptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mytodolist/springtodo/service/UserLoginService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mytodolist/springtodo/service/UserLoginService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mappers/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mappers/UserMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/spt/servlet-context.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/spt/servlet-context.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ConnectionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ConnectionTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../sql/20221013MYSQL.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../../../sql/20221013MYSQL.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -430,7 +355,7 @@
       <workItem from="1669456838031" duration="2850000" />
       <workItem from="1669485051243" duration="24000" />
       <workItem from="1669559021359" duration="231000" />
-      <workItem from="1669593858853" duration="21554000" />
+      <workItem from="1669593858853" duration="30842000" />
     </task>
     <servers />
   </component>

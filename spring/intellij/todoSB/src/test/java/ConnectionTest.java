@@ -1,6 +1,7 @@
 
 import com.mytodolist.springtodo.domain.TodoDTO;
 import com.mytodolist.springtodo.domain.UserDTO;
+import com.mytodolist.springtodo.formatter.LocalDateFormatter;
 import com.mytodolist.springtodo.mapper.TodoListMapper;
 import com.mytodolist.springtodo.mapper.UserMapper;
 import com.mytodolist.springtodo.service.SingUpService;
@@ -17,6 +18,7 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.time.LocalDate;
 
 @Log4j2
 @ExtendWith(SpringExtension.class)
@@ -64,7 +66,7 @@ public class ConnectionTest {
         TodoDTO todo = TodoDTO.builder()
                 .tno(11)
                 .todo("JCS")
-                .dueDate("2022-12-25")
+                .dueDate(LocalDate.parse("2022-12-25"))
                 .finished(false)
                 .userID("test")
                 .build();
@@ -80,7 +82,7 @@ public class ConnectionTest {
     public void insertTodoTest(){
         TodoDTO todo = TodoDTO.builder()
                 .todo("x-mas")
-                .dueDate("2022-12-25")
+                .dueDate(LocalDate.now())
                 .finished(true)
                 .userID("test")
                 .build();
@@ -115,7 +117,7 @@ public class ConnectionTest {
 
 
     @Test
-    public void getUser(){
+    public void getUser() throws SQLException {
         UserDTO user = UserDTO.builder().userID("test").userPW("test11").build();
 
         log.info(userMapper.selectCount());
