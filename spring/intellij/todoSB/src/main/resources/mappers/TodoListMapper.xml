@@ -1,0 +1,37 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mytodolist.springtodo.mapper.TodoListMapper">
+
+    <!-- todoList 전체 출력 -->
+<!--    <select id="selectAll"-->
+<!--            resultType="com.mytodolist.springtodo.domain.TodoDTO">-->
+<!--        select * from todo_list where userID=#{userID}-->
+<!--    </select>-->
+
+    <!-- todoList에 추가 -->
+    <insert id="insertTodoList" parameterType="com.mytodolist.springtodo.domain.TodoDTO">
+        insert into todo_list(todo, dueDate, finished, userID) values (#{todo}, #{dueDate}, #{finished}, #{userID})
+    </insert>
+
+    <!-- todoList 수정 -->
+    <update id="updateTodo" parameterType="com.mytodolist.springtodo.domain.TodoDTO">
+        update todo_list set todo=#{todo}, dueDate=#{dueDate}, finished=#{finished} where tno=#{tno} and userID=#{userID}
+    </update>
+
+    <!-- todoList 에서 삭제 -->
+    <delete id="deleteTodoList" parameterType="com.mytodolist.springtodo.domain.TodoDTO">
+        delete from todo_list where tno=#{tno} and userID=#{userID}
+    </delete>
+
+    <!-- 조회 (read) -->
+    <select id="getTodoByTno"
+            parameterType="com.mytodolist.springtodo.domain.TodoDTO"
+            resultType="com.mytodolist.springtodo.domain.TodoDTO">
+        select * from todo_list where tno=#{tno} and userID=#{userID}
+    </select>
+
+
+
+</mapper>

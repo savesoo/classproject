@@ -1,0 +1,440 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="38595011-d30b-4657-abeb-87fff4aa56f3" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../SBTodo/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SBTodo/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SBTodo/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SBTodo/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SBTodo/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SBTodo/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SBTodo/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SBTodo/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SBTodo/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SBTodo/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SBTodo/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SBTodo/settings.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SBTodo/src/main/java/com/mytodolist/sbtodo/HelloServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SBTodo/src/main/java/com/mytodolist/sbtodo/controller/LoginController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SBTodo/src/main/java/com/mytodolist/sbtodo/controller/LogoutController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SBTodo/src/main/java/com/mytodolist/sbtodo/controller/MyInfoController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SBTodo/src/main/java/com/mytodolist/sbtodo/controller/SignUpController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SBTodo/src/main/java/com/mytodolist/sbtodo/controller/TodoListController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SBTodo/src/main/java/com/mytodolist/sbtodo/controller/TodoModifyController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SBTodo/src/main/java/com/mytodolist/sbtodo/controller/TodoReadController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SBTodo/src/main/java/com/mytodolist/sbtodo/controller/TodoRegisterController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SBTodo/src/main/java/com/mytodolist/sbtodo/controller/TodoRemoveController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SBTodo/src/main/java/com/mytodolist/sbtodo/domain/LoginInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SBTodo/src/main/java/com/mytodolist/sbtodo/domain/SignUpDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SBTodo/src/main/java/com/mytodolist/sbtodo/domain/TodoDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SBTodo/src/main/java/com/mytodolist/sbtodo/domain/UserDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SBTodo/src/main/java/com/mytodolist/sbtodo/formatter/CheckBoxFormatter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SBTodo/src/main/java/com/mytodolist/sbtodo/formatter/LocalDateFormatter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SBTodo/src/main/java/com/mytodolist/sbtodo/interceptor/AuthCheckInterceptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SBTodo/src/main/java/com/mytodolist/sbtodo/interceptor/SessionLoginInterceptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SBTodo/src/main/java/com/mytodolist/sbtodo/mapper/TodoListMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SBTodo/src/main/java/com/mytodolist/sbtodo/mapper/UserMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SBTodo/src/main/java/com/mytodolist/sbtodo/service/TodoService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SBTodo/src/main/java/com/mytodolist/sbtodo/service/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SBTodo/src/main/resources/log4j2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SBTodo/src/main/resources/mappers/TodoListMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SBTodo/src/main/resources/mappers/UserMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SBTodo/src/main/webapp/WEB-INF/spring/base-context.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SBTodo/src/main/webapp/WEB-INF/spring/servlet-context.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SBTodo/src/main/webapp/WEB-INF/views/todo/list.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SBTodo/src/main/webapp/WEB-INF/views/todo/modify.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SBTodo/src/main/webapp/WEB-INF/views/todo/read.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SBTodo/src/main/webapp/WEB-INF/views/todo/register.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SBTodo/src/main/webapp/WEB-INF/views/user/login.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SBTodo/src/main/webapp/WEB-INF/views/user/myInfo.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SBTodo/src/main/webapp/WEB-INF/views/user/signup.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SBTodo/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SBTodo/src/main/webapp/index.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SBTodo/src/test/java/ConnectionTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mytodolist/springtodo/controller/LoginController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mytodolist/springtodo/controller/LogoutController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mytodolist/springtodo/controller/MyInfoController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mytodolist/springtodo/controller/SignUpController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mytodolist/springtodo/controller/TodoModifyController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mytodolist/springtodo/controller/TodoReadController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mytodolist/springtodo/controller/TodoRegisterController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mytodolist/springtodo/controller/TodoRemoveController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mytodolist/springtodo/exception/CommonExceptionAdvice.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mytodolist/springtodo/mapper/TodoListMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mytodolist/springtodo/mapper/UserMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mytodolist/springtodo/service/SingUpService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mytodolist/springtodo/service/TodoService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mytodolist/springtodo/service/UserLoginService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mappers/TodoListMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mappers/UserMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/error/404error.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/ConnectionTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Dept/src/main/java/com/app/manager/domain/DeptDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Dept/src/main/java/com/app/manager/domain/DeptDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Dept/src/main/java/com/app/manager/service/DeptListService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Dept/src/main/java/com/app/manager/service/DeptListService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Emp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Emp/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springTodo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../springTodo/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springTodo/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../springTodo/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springTodo/src/main/java/com/mytodolist/springtodo/Filter/LoginCheckFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../springTodo/src/main/java/com/mytodolist/springtodo/Filter/LoginCheckFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springTodo/src/main/java/com/mytodolist/springtodo/Filter/UTF8Filter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springTodo/src/main/java/com/mytodolist/springtodo/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../springTodo/src/main/java/com/mytodolist/springtodo/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springTodo/src/main/java/com/mytodolist/springtodo/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../springTodo/src/main/java/com/mytodolist/springtodo/dao/UserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springTodo/src/main/java/com/mytodolist/springtodo/domain/LoginInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../springTodo/src/main/java/com/mytodolist/springtodo/domain/LoginInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springTodo/src/main/java/com/mytodolist/springtodo/domain/UserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../springTodo/src/main/java/com/mytodolist/springtodo/domain/UserDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springTodo/src/main/java/com/mytodolist/springtodo/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../springTodo/src/main/java/com/mytodolist/springtodo/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springTodo/src/main/webapp/WEB-INF/spt/base-context.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../springTodo/src/main/webapp/WEB-INF/spt/base-context.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springTodo/src/main/webapp/WEB-INF/spt/servlet-context.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../springTodo/src/main/webapp/WEB-INF/spt/servlet-context.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springTodo/src/main/webapp/WEB-INF/views/user/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../springTodo/src/main/webapp/WEB-INF/views/user/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springTodo/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../springTodo/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../sql/20221013MYSQL.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../../../sql/20221013MYSQL.sql" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="springTodo" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="springTodo" type="f1a62948:ProjectNode" />
+                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="springTodo" type="f1a62948:ProjectNode" />
+                <item name="Run Configurations" type="7b0102dc:RunConfigurationsNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="spring-beans.schema" />
+        <option value="Class" />
+        <option value="Jsp File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2HfI5GHjvuIvu7yw4O9MyXYtpcS" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/E495/Documents/GitHub/classproject/spring/intellij/todoSB/src/main/java/com/mytodolist/springtodo/controller",
+    "project.structure.last.edited": "Problems",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.26206896",
+    "spring.configuration.checksum": "c82bcf04b0f92d83131b7d96855cb10e"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\E495\Documents\GitHub\classproject\spring\intellij\todoSB\src\main\java\com\mytodolist\springtodo\controller" />
+      <recent name="C:\Users\E495\Documents\GitHub\classproject\spring\intellij\todoSB\src\main\resources\mappers" />
+      <recent name="C:\Users\E495\Documents\GitHub\classproject\spring\intellij\todoSB\src\main\java\com\mytodolist\springtodo" />
+      <recent name="C:\Users\E495\Documents\GitHub\classproject\spring\intellij\springTodo\src\main\java\com\mytodolist\springtodo" />
+      <recent name="C:\Users\E495\Documents\GitHub\classproject\spring\intellij\springTodo\src\main\webapp\WEB-INF\views" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.mytodolist.springtodo.mapper" />
+      <recent name="com.mytodolist.springtodo.controller" />
+      <recent name="" />
+      <recent name="com.mytodolist.springtodo.formatter" />
+      <recent name="com.mytodolist.springtodo.Filter" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.68">
+    <configuration name="ConnectionTest.getUUIDTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;ConnectionTest.getUUIDTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="ConnectionTest.insertTodoTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;ConnectionTest.insertTodoTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="ConnectionTest.insertUserTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;ConnectionTest.insertUserTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="ConnectionTest.selectByTnoTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;ConnectionTest.selectByTnoTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="ConnectionTest.updateTodoTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;ConnectionTest.updateTodoTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="Tomcat 9.0.68" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.68" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="COMMON_VM_ARGUMENTS" value="-Dfile.encoding=UTF-8 -Dconsole.encoding=UTF-8 " />
+      <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
+      <option name="UPDATE_CLASSES_ON_FRAME_DEACTIVATION" value="true" />
+      <deployment>
+        <artifact name="Gradle : com.mytodolist : springTodo-1.0-SNAPSHOT.war (exploded)">
+          <settings>
+            <option name="CONTEXT_PATH" value="/" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="c2f8f35f-59e0-43d4-b601-cdac8c61c05a" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="3670" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Profile">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="Gradle : com.mytodolist : springTodo-1.0-SNAPSHOT.war (exploded)" />
+        </option>
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.ConnectionTest.updateTodoTest" />
+        <item itemvalue="Gradle.ConnectionTest.insertUserTest" />
+        <item itemvalue="Gradle.ConnectionTest.insertTodoTest" />
+        <item itemvalue="Gradle.ConnectionTest.selectByTnoTest" />
+        <item itemvalue="Gradle.ConnectionTest.getUUIDTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SpringBeansView">
+    <option name="beanDetailsProportion" value="0.3" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="38595011-d30b-4657-abeb-87fff4aa56f3" name="Changes" comment="" />
+      <created>1668669528438</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1668669528438</updated>
+      <workItem from="1668669529978" duration="10524000" />
+      <workItem from="1668730499304" duration="14365000" />
+      <workItem from="1668831191228" duration="8735000" />
+      <workItem from="1668990729213" duration="25000" />
+      <workItem from="1669019758460" duration="2275000" />
+      <workItem from="1669046250507" duration="3785000" />
+      <workItem from="1669075218151" duration="31210000" />
+      <workItem from="1669166072655" duration="22748000" />
+      <workItem from="1669361297292" duration="1744000" />
+      <workItem from="1669439795565" duration="2006000" />
+      <workItem from="1669447511889" duration="176000" />
+      <workItem from="1669447779056" duration="4794000" />
+      <workItem from="1669456838031" duration="2850000" />
+      <workItem from="1669485051243" duration="24000" />
+      <workItem from="1669559021359" duration="231000" />
+      <workItem from="1669593858853" duration="21554000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
