@@ -22,5 +22,7 @@ public class DeptListService {
 
     public List<DeptDTO> getSearchList(DeptSearchOption searchOption){
         return deptMapper.selectByOption(searchOption);
+
     }
+
 }
