@@ -11,8 +11,10 @@ import lombok.*;
 public class LoginInfo {
 
     // 로그인시 가지고 다닐 데이터만 저장한 DTO
+    private int user_idx;
     private String userID;
     private String userName;
     private String userProfile;
+    private String uuid;
 
 }

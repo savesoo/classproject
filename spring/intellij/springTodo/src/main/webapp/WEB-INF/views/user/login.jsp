@@ -35,7 +35,7 @@
             </tr>
             <tr>
                 <td></td>
-                <td><a href="#">비밀번호 찾기</a></td>
+                <td>자동로그인 <input type="checkbox" name="rememberMe"> </td>
             </tr>
         </table>
 

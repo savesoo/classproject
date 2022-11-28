@@ -30,14 +30,22 @@
 
     <!-- 권한 확인 인터셉터 -->
     <mvc:interceptors>
+
+        <mvc:interceptor>
+            <mvc:mapping path="/user/**"/>
+            <bean class="com.mytodolist.springtodo.interceptor.SessionLoginInterceptor"/>
+        </mvc:interceptor>
+
+<!--        <mvc:interceptor>-->
+<!--            <mvc:mapping path="/user/myInfo"/>-->
+<!--            <bean class="com.mytodolist.springtodo.interceptor.AuthCheckInterceptor"/>-->
+<!--        </mvc:interceptor>-->
+
         <mvc:interceptor>
             <mvc:mapping path="/todo/**"/>
             <bean class="com.mytodolist.springtodo.interceptor.AuthCheckInterceptor"/>
         </mvc:interceptor>
-        <mvc:interceptor>
-            <mvc:mapping path="/user/myInfo"/>
-            <bean class="com.mytodolist.springtodo.interceptor.AuthCheckInterceptor"/>
-        </mvc:interceptor>
+
     </mvc:interceptors>
 
 

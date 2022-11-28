@@ -37,8 +37,8 @@ public class LoginCheckFilter implements Filter {
 
         if(session.getAttribute("loginInfo")==null){
 
-            //UserDTO user = UserService.ud.selectByIDPW();
-            //session.setAttribute("loginInfo", );
+            log.info("비로그인 상태 -> 로그인 페이지로 이동");
+            res.sendRedirect("/user/login");
 
         }
 

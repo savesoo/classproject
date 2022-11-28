@@ -75,4 +75,24 @@ public class UserService implements ITodo{
     }
 
 
+    // uuid로 user 정보 가져오기
+    public UserDTO selectUUID(String uuid) throws SQLException {
+
+        log.info("uuid select ... ");
+        @Cleanup Connection conn = ConnectionUtil.getInstance().getConnection();
+
+        return dao.selectUUID(conn, uuid);
+    }
+
+    // idx 찾아 uuid 갱신
+    public int updateUUID(String uuid, int user_idx) throws SQLException  {
+
+        log.info("uuid update ...");
+        @Cleanup Connection conn = ConnectionUtil.getInstance().getConnection();
+
+        return dao.updateUUID(conn, uuid, user_idx);
+
+    }
+
+
 }

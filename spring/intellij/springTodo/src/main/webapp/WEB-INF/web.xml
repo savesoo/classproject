@@ -21,6 +21,13 @@
             <param-value>/WEB-INF/spt/servlet-context.xml</param-value>
         </init-param>
 
+        <!-- tomcat 제공 페이지 대신 커스텀 페이지 지정을 위한 파람 설정 -->
+        <init-param>
+            <param-name>throwExceptionIfNoHandlerFound</param-name>
+            <param-value>true</param-value>
+        </init-param>
+
+
         <load-on-startup>1</load-on-startup>
     </servlet>
 
