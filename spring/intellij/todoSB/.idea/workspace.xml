@@ -5,16 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="38595011-d30b-4657-abeb-87fff4aa56f3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../Dept/src/main/java/com/app/manager/controller/rest/DeptJsonMessageController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Dept/src/main/java/com/app/manager/controller/rest/DeptRestController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Dept/src/main/java/com/app/manager/controller/rest/ExampleRestController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Dept/src/main/java/com/app/manager/controller/rest/SimpleConverterController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Dept/src/main/webapp/WEB-INF/views/mc/simple.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Dept/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../Dept/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Dept/src/main/java/com/app/manager/domain/DeptDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Dept/src/main/java/com/app/manager/domain/DeptDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Emp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Emp/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mytodolist/springtodo/interceptor/SessionLoginInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mytodolist/springtodo/interceptor/SessionLoginInterceptor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../sql/20221013MYSQL.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../../../sql/20221013MYSQL.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
