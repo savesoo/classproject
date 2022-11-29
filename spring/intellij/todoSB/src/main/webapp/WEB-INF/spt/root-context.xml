@@ -19,6 +19,7 @@
     -->
 
     <context:component-scan base-package="com.mytodolist.springtodo.service"></context:component-scan>
+    <context:component-scan base-package="com.mytodolist.springtodo.exception"></context:component-scan>
 
     <bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig">
         <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"></property>
