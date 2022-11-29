@@ -63,6 +63,8 @@ dependencies {
     // https://mvnrepository.com/artifact/org.hibernate/hibernate-validator
     implementation group: 'org.hibernate', name: 'hibernate-validator', version: '6.2.1.Final'
 
+    // @RestController 사용 가능한 jackson 설정
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.14.0'
 
 }
 
