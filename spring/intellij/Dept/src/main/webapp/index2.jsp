@@ -60,14 +60,14 @@
             return fetch(url, {
                 method : 'POST',
                 headers : { 'content-Type' : 'application/json'},
-                body : JSON.stringify(payload);
+                body : JSON.stringify(payload)
             })
         },
         put(url, payload) {
             return fetch(url, {
                 method: 'PUT',
                 headers: {'content-Type': 'application/json'},
-                body: JSON.stringify(payload);
+                body: JSON.stringify(payload)
             })
         },
         delete(url){
@@ -91,7 +91,23 @@
             return response.json();
         })
         .then(list => console.log(list))
+        .catch(err => console.log(err))
+
+    request.post('/api/v1/depts', {deptno : 11, dname : 'test', loc : 'test123'})
+        .then(response=>{
+            if(!response.ok)
+                return new Error(response.statusText);
+            console.log(response)
+        })
         .catch(err => console.log(err));
+
+    request.put('/api/v1/depts/11', {deptno : 11, dname : '기획팀', loc : '부산'})
+        .catch(err => console.log(err));
+
+    request.delete('/api/v1/depts//11')
+        .then(res=> {
+        console.log(res.body)
+    })
 
 
 </script>

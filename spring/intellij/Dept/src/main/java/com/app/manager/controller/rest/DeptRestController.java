@@ -62,13 +62,12 @@ public class DeptRestController {
          */
 
         log.info(deptDTO);
+
         deptRegService.insertDept(deptDTO);
 
         // Header 정의
         HttpHeaders httpHeaders = new HttpHeaders();
         httpHeaders.set("some-header", "some-value");
-
-        deptEditService.editDept(deptDTO);
 
         // 헤더값 추가가 필요할시 응답, 헤더, status 코드 순서
         return new ResponseEntity<>("insert OK", httpHeaders, HttpStatus.OK);
@@ -89,6 +88,8 @@ public class DeptRestController {
         // Header 정의
         HttpHeaders httpHeaders = new HttpHeaders();
         httpHeaders.set("some-header", "some-value");
+
+        deptEditService.editDept(deptDTO);
 
         return new HttpEntity<String>("update", httpHeaders);
 
