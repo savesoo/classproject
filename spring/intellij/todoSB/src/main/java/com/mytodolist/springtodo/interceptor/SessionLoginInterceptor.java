@@ -66,6 +66,7 @@ public class SessionLoginInterceptor implements HandlerInterceptor {
 
         }
 
+        log.info(" >>> 자동 로그인 상태 >>> ");
         return true;
 
     }
