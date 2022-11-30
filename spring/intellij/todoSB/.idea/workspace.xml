@@ -5,7 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="38595011-d30b-4657-abeb-87fff4aa56f3" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../Dept/src/main/webapp/map.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Dept/src/main/webapp/map2.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Dept/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../Dept/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Dept/src/main/webapp/index2.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../Dept/src/main/webapp/index2.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Emp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Emp/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mytodolist/springtodo/interceptor/SessionLoginInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mytodolist/springtodo/interceptor/SessionLoginInterceptor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../sql/20221013MYSQL.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../../../sql/20221013MYSQL.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -350,6 +356,7 @@
       <workItem from="1669559021359" duration="231000" />
       <workItem from="1669593858853" duration="30842000" />
       <workItem from="1669680644411" duration="4498000" />
+      <workItem from="1669779311427" duration="1880000" />
     </task>
     <servers />
   </component>

@@ -46,7 +46,6 @@ public class SessionLoginInterceptor implements HandlerInterceptor {
                 if(user!=null){
                     UUID uuid = UUID.randomUUID();
                     service.updateUUID(uuid.toString(), user.getUser_idx());
-                    user.setUuid(uuid.toString());
                     session.setAttribute("loginInfo", user.toLoginInfo()); // 세션에 uuid 저장
 
                     cookie.setValue(uuid.toString());
