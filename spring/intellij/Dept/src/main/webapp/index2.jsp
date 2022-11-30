@@ -112,7 +112,22 @@
 
 </script>
 
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
+<script>
+
+    axios.get('/api/v1/depts/10')
+        .then(res=> {
+            console.log('res', res.data)
+            // 태그 캐스팅 -> 데이터 변경 가능
+        })
+        .catch(err=>console.log(err));
+
+    axios.post('/api/v1/depts',{"deptno": 35, "dname": "DEV", "loc": "판교22"})
+        .then(res => console.log(res))
+        .catch(err => console.log(err));
+
+</script>
 
 </body>
 </html>
