@@ -1,0 +1,93 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.first.app.mapper.DeptMapper"> <!--인터페이스 풀네임으로 정의-->
+
+    <!-- id는 메소드의 이름과 일치 resultType은 row를 어디 넣을 건지를 장의 -->
+    <select id="selectAll" resultType="com.first.app.domain.DeptDTO">
+        select * from dept
+    </select>
+
+    <!-- insert -->
+    <!-- 정수 반환하므로 resultType 생략 가능 -->
+    <insert id="insertDept" parameterType="com.first.app.domain.DeptDTO">
+        insert into dept values (#{deptno}, #{dname}, #{loc})
+    </insert>
+
+    <!-- 전달되는 파라미터(매개변수)가 한개일 때는 #{} 안의 이름이 같지 않아도 상관 없음! -->
+    <select id="selectBydeptno" resultType="com.first.app.domain.DeptDTO">
+        select * from dept where deptno=#{deptno}
+    </select>
+
+    <!-- update -->
+    <!-- 전달되는 파라미터(매개변수)가 객체형(하나 이상)이므로 parameterType 사용 -->
+    <update id="updateDept" parameterType="com.first.app.domain.DeptDTO">
+        update dept set dname=#{dname}, loc=#{loc} where deptno=#{deptno}
+    </update>
+
+    <!-- delete -->
+    <delete id="deletBydeptno">
+        delete from dept where deptno=#{deptno}
+    </delete>
+
+
+
+<!--    &lt;!&ndash; 키워드를 통한 검색 &ndash;&gt;-->
+<!--    <select id="selectByOption"-->
+<!--            parameterType="com.first.app.domain.DeptSearchOption"-->
+<!--            resultType="com.first.app.domain.DeptDTO">-->
+
+<!--        select * from dept-->
+
+<!--        <where>-->
+
+<!--            <if test="searchType!=null and keyword!=null">-->
+<!--                <if test="searchType == 'dname' ">-->
+<!--&lt;!&ndash;                    dname like concat('%', #{keyword}, '%')&ndash;&gt;-->
+<!--                    <include refid="searchDname"></include>-->
+<!--                </if>-->
+<!--                <if test="searchType == 'loc' ">-->
+<!--&lt;!&ndash;                    loc like concat('%', #{keyword}, '%')&ndash;&gt;-->
+<!--                    <include refid="searchLoc"></include>-->
+<!--                </if>-->
+<!--            </if>-->
+
+<!--        </where>-->
+
+<!--    </select>-->
+
+<!--    <sql id="searchDname">-->
+<!--        dname like concat('%', #{keyword}, '%')-->
+<!--    </sql>-->
+
+<!--    <sql id="searchLoc">-->
+<!--        loc like concat('%', #{keyword}, '%')-->
+<!--    </sql>-->
+
+    <!-- list : 별칭이며 ArrayList로 들어가 있음 -->
+    <select id="selectByDeptnos"
+            parameterType="list"
+            resultType="com.first.app.domain.DeptDTO"
+    >
+        select * from dept
+
+        <where>
+            <if test="list!=null and list.size !=0">
+                deptno in
+                <foreach collection="list"
+                         item="item"
+                         index="index"
+                         separator=","
+                         open="("
+                         close=")"
+                >
+                    #{item}
+                </foreach>
+            </if>
+        </where>
+
+    </select>
+
+
+</mapper>
