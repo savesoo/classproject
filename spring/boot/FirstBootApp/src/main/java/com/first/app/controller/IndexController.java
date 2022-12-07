@@ -22,6 +22,6 @@ public class IndexController {
     @GetMapping("/hello")
     public String hello(Model model){
         model.addAttribute("msg", "Hello~Spring boot~");
-        return "hello"; // templates/hello.html
+        return "hello"; // templates/footer.html
     }
 }
