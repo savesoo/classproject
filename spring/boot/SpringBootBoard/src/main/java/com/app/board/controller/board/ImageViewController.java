@@ -16,6 +16,7 @@ import java.io.*;
 @Controller
 public class ImageViewController {
 
+    // DB에 넣은 파일을 '이미지'로 인식시켜 사용자 화면에서도 출력하기 위한 컨트롤러
     // 요청하는 파일만 있으면 응답처리 가능해짐
 
     @GetMapping(value = "/upload/photo/{fileName}", produces = MediaType.IMAGE_PNG_VALUE) // 응답처리
@@ -31,7 +32,7 @@ public class ImageViewController {
         File savedFile = new File(new File("").getAbsolutePath(), "photo\\"+fileName);
 
         if(savedFile.exists()){
-            // 저장된 파일이 존재할 때 응답 처리
+            // 저장된 파일이 존재할 때 응답 처리(응답코드)
             InputStream imageStream = new FileInputStream(savedFile);
             imageByteArray = imageStream.readAllBytes();
             imageStream.close();
