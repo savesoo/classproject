@@ -29,7 +29,7 @@ public class ImageViewController {
         HttpStatus status = HttpStatus.NOT_FOUND;
 
         // 저장된 파일의 경로
-        File savedFile = new File(new File("").getAbsolutePath(), "photo\\"+fileName);
+        File savedFile = new File(new File("").getAbsolutePath(), "photo"+File.separator+fileName);
 
         if(savedFile.exists()){
             // 저장된 파일이 존재할 때 응답 처리(응답코드)
