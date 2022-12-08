@@ -56,17 +56,23 @@ public class BoardListPage {
         // 35*1.0 = 35.0/10 = 3.5 -> 가까운 정수 4 -> int로 변환 = 4*10 = 40
         this.startNum = this.endNum-9; // 20-19=1
 
+        //this.endNum = (int)((Math.ceil((this.pageNum*1.0)/5)+1))*10;
+        //this.startNum = this.endNum-4;
+
         // 전체 페이지의 끝번호
         int realEndNum = (int)(Math.ceil((this.totalCount * 1.0) / countPerPage));
         // 35*1.0 = 35.0/10 = 3.5 -> 가까운 정수 4 -> int로 변환 = 4
         // 원래 한 페이지에 10개까지 들어가므로 페이지 계산을 위해 10과 비교연산(10개 중 4개밖에 없다면 4를 반환)
 
+
         // 실제 마지막 번호가 끝번호(최댓값)보다 작다면 현재 번호, 아니면 끝번호를 반환
         this.endNum = realEndNum < this.endNum ? realEndNum : this.endNum;
+
 
         // 이전 페이지 존재 여부
         // 시작하는 숫자가 1보다 크다면 true
         this.prev = this.startNum > 1;
+
 
         // 다음 페이지 존재 여부
         // 현재 마지막 숫자가 구간의 마지막 숫자(total)보다 작다면 true, 아니면 false
