@@ -12,11 +12,13 @@ import java.time.LocalDate;
 @Builder
 public class ReplyDTO {
 
-    private int mo;
+    private int rno;
     private int bno;
     private String reply;
     private String replyer;
-    private LocalDate replyDate;
-    private LocalDate updateDate;
+    private String replyDate;
+    private String updateDate;
+
+
 
 }
