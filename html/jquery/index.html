@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+
+    <script>
+        
+        // window.onload = () => {}
+        // $() -> 팩토리 함수 : jquery 객체를 생성해주는 메소드
+        // document(문서객체) -> jquery 객체로 생성해줌
+        // $(document).ready(function(){
+        //     console.log('onload: jquery ready method');
+        // })
+
+        // // document 생략 가능 + callback 함수 사용
+        // $().ready(()=>{
+        //     alert('onload!');
+        // })
+
+        ///////////////////////////////////////
+
+        $().ready(()=>{
+            
+            
+            // 선택자를 이용한 문서객체 캐스팅
+            //let h2 = document.querySelector('.bg-black');
+            //$('*')
+            //h2.style.
+
+
+            // $('*').css('color', 'red').css('background-color', '#eee');
+            // // 다시 jquery 형식의 객체를 반환하므로 chaining 사용 가능
+            // $('.bg-black').css('background-color', '#000');
+            // $('#pick').css('background-color', 'pink');
+
+
+             ///////////////////////////////////////
+
+            //document.querySelector('input[type=text]').value='こんにちは';
+            // $('input[type=text]').val('Hello');
+
+            // // javascript와 jquery의 캐스팅 방법 차이
+            // let val1 = document.querySelector('input[type=text]').value
+            // let val2 = $('input:text').val();
+        
+            // console.log('val1', val1);
+            // console.log('val2', val2);
+
+
+            ///////////////////////////////////////
+
+            // 입력 양식 필터 선택자
+
+
+            // 5초 후에 선택된 항목의 값을 확인
+            // setTimeout(() => {
+
+            //     let selectVal = $('select>option:selected').val();
+            //     console.log('selectVal', selectVal);
+
+            //     let checkVal = $('input:checkbox:checked').val();
+            //     console.log('checkVal', checkVal);
+
+            // }, 5000);
+
+
+            ///////////////////////////////////////
+
+            // 위치, 함수 필터 선택자
+
+
+            // $('table tr:odd').css('background-color', 'lightgreen');
+            // $('table tr:even').css('background-color', 'lightpink');
+            // $('table tr:first').css('background-color', 'teal').css('color', 'beige');
+            // $('table tr:last').css('background-color', 'lightblue').css('color', 'grey');
+
+            ///////////////////////////////////////
+        
+            // $('tr').first().css('color', 'blue');
+            // $('tr').last().css('color', 'orange');
+            // $('tr').eq(3).css('color', 'red');
+
+            ///////////////////////////////////////
+
+            /*// 배열 생성
+            let links = [
+                { name : '네이버', url : 'http://www.naver.com'}, 
+                { name : '다음', url : 'http://www.daum.net'}, 
+                { name : '구글', url : 'http://www.google.com'}
+            ]
+
+            let html = ''
+            // 배열 처리 (html 형식으로)
+            $.each(links, (index, item) => {
+                // 객체 하나하나를 처리하는 콜백 함수 (인덱스, 요소)
+                console.log(index, item);
+
+                // 반복
+                html += '<a href="'+item.url+'">'+item.name+'</a>\n'
+
+            })
+
+            // 출력
+            console.log(html);
+
+
+            // html() = innerHtml 속성 처리와 같다!
+            // body 안의 html을 get , 매개변수 없는 경우 대개 get임
+            let bodyVal = $('body').html(); 
+            //console.log(bodyVal);
+
+            // set (#id에 ()값을 넣어줌!)
+            $('#links').html(html); */
+
+            ///////////////////////////////////////
+
+            /*// 문서객체 여러 개를 캐스팅
+            $('h1').each((index, item) => {
+
+                //$(item)
+
+                // get
+                console.log(index, item.innerHTML);
+                // jquery get
+                console.log(index, $(item).html());
+
+                $(item).css('color', 'red');
+            })*/
+
+            ///////////////////////////////////////
+
+            /*$('h1').filter((index, item) => {
+                return index%3==0; // return값이 true인 것만 선택됨!
+            }).css('color', 'blue');*/
+
+
+            ///////////////////////////////////////
+
+
+            // xml 문자열을 만든다.
+            var xml = '';
+
+            xml += '<links>';
+            xml += '    <link>';
+            xml += '        <name>네이버</name>';
+            xml += '        <url>http://www.naver.com</url>';
+            xml += '    </link>';
+            xml += '    <link>';
+            xml += '        <name>다음</name>';
+            xml += '        <url>http://www.daum.net</url>';
+            xml += '    </link>';
+            xml += '    <link>';
+            xml += '        <name>카카오</name>';
+            xml += '        <url>http://www.kakao.com</url>';
+            xml += '    </link>';
+            xml += '</links>';
+
+            // xml 형식을 가지는 문자열을 xml 문서객체로 변경
+            let xmlDoc = $.parseXML(xml);
+
+            let html = '';
+
+            // xmlDocument -> jQuery : find(Tag 이름) -> 태그 검색
+            $(xmlDoc).find('link').each((index, item)=>{
+
+                // 필요한 위치의 element 찾기
+                // $(this) = <link>
+                let name = $(item).find('name').text();
+                let url = $(item).find('url').text();
+
+                console.log(name, url);
+
+                html += '<div>';          // html 만들어서 처리
+                html += '   <h2>'+name+'</h2>';
+                html += '   <p>'+url+'</p>';
+                html += '</div>';
+
+            });
+
+            $('body').html(html); 
+
+
+        })
+
+
+    </script>
+</head>
+<body>
+
+    <!-- <h1>header - 01</h1>
+    <h1>header - 02</h1>
+    <h1>header - 03</h1>
+    <h1>header - 04</h1>
+    <h1>header - 05</h1> -->
+
+    <!-- <div id="links"></div> -->
+
+    <!-- <table border="1">
+        <tr>
+            <td>thead 1</td>
+            <td>thead 2</td>
+        </tr>
+        <tr>
+            <td>tbody 1 -1</td>
+            <td>tbody 1 -2</td>
+        </tr>
+        <tr>
+            <td>tbody 2 -1</td>
+            <td>tbody 2 -2</td>
+        </tr>
+        <tr>
+            <td>tbody 3 -1</td>
+            <td>tbody 3 -2</td>
+        </tr>
+        <tr>
+            <td>tbody 4 -1</td>
+            <td>tbody 4 -2</td>
+        </tr>
+        <tr>
+            <td>tbody 5 -1</td>
+            <td>tbody 5 -2</td>
+        </tr>
+        <tr>
+            <td>footer -1</td>
+            <td>footer -2</td>
+        </tr>
+    </table> -->
+
+
+    <!-- <select>
+        <option>2022</option>
+        <option>2021</option>
+        <option>2020</option>
+        <option>2019</option>
+        <option>2018</option>
+    </select>
+
+    <input type="checkbox"> -->
+
+    <!-- <input type="text"> -->
+
+    <!-- <h2>header - 01</h2>
+    <h2 class="bg-black">header - 02</h2>
+    <h2 id="pick">header - 03</h2>
+    <h2>header - 04</h2>
+    <h2 class="bg-black">header - 05</h2> -->
+    
+</body>
+</html>
