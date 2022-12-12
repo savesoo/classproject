@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+
+    <script>
+        
+        $().ready(function(){
+
+            // $('<h1></h1>').appendTo('body'); 
+            // $('body').append('<h2></h2>');
+
+            // $('<h3></h3>').prependTo('body');
+            // $('body').prepend('<h4></h4>');
+
+            // $('<h1></h1>').html('hello!!! ').appendTo('body');
+            // $('<h3> DOM h1 create!!! </h3>').appendTo('body');
+            // // 필요한 태그를 추가
+
+            // $('<img>').attr('src', '../html5/rabbit1.jpg')
+            //         .attr('width', 200)
+            //         .appendTo('body');
+
+
+            //////////////////////////////
+
+            // append() 메소드를 이용한 문서 객체 삽입
+
+            // let html1 = '<a href="#">link</a>';
+            // let html2 = '<p>TEST</p>';
+            // let html3 = '<div> DIV Tag </div>';
+
+            // // 출력하고 싶은 순서대로 정렬
+            // $('body').append(html1, html2, html3, '<hr>');
+
+
+            //////////////////////////////
+
+            let links = [
+                { name : '네이버', url : 'http://www.naver.com'}, 
+                { name : '다음', url : 'http://www.daum.net'}, 
+                { name : '구글', url : 'http://www.google.com'}
+            ]
+
+            // $.each(links, function(index, item){
+            //     // #list 뒤에 function(){}을 추가
+            //     $('#list').append(function(){
+            //         let html = '<h3> <a href="'+item.url+'">'+item.name+'</a> </h3>';
+            //         return html;
+            //     })
+            // })
+
+
+            $('div').append(function(index){
+                return '<h3> <a href="'+links[index].url+'">'+links[index].name+'</a> </h3>';
+            });
+
+        })
+
+    </script>
+
+</head>
+<body>
+
+    <!-- 출력되어 보이지는 않으나 존재함 -->
+    <div></div>
+    <div></div>
+    <div></div>
+
+    <!-- <div id="list"></div> -->
+    
+</body>
+</html>
