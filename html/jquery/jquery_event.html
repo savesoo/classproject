@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1, div {
+            border: 1px solid #000;
+        }
+        .reverse{
+            background-color: deepskyblue;
+            color: darkblue;
+        }
+    </style>
+
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+
+    <script>
+
+    $().ready(function(){
+
+        /*
+        $('h1').on('click', function(e){
+            // this => event가 발생한 element 가리킴
+            $(this).html(function(index, oldHtml){
+                return oldHtml + '+';
+            })
+        })
+
+        // 한번에 여러 개의 이벤트 처리
+        $('h1').on({
+            // 이벤트 타입, 이름
+            mouseenter: function(){
+                $(this).addClass('reverse');
+            },
+            mouseleave: function(){
+                $(this).removeClass('reverse');
+            }
+        })
+        */
+
+
+        //////////////////////////////
+
+
+        // 이벤트 발생 후 해당 영역을 기준으로 태그 선택 가능!
+        /*$('div').click(function(e){
+
+            let h3 = $('h3', this).text();
+            let p = $('p', this).text();
+
+            console.log(h3, p);
+
+        });*/
+
+        //////////////////////////////
+
+        // 기본 이벤트 제거, 이벤트 버블링 제거
+
+        /*
+        $('a').click(function(e){
+
+            // 기본 이벤트 제거
+            //e.preventDefault();
+
+            console.log('a click!!!');
+
+            return false;
+
+        })
+
+        $('form').submit(function(e){
+            console.log('form submit!');
+
+            let uid = $('#uid').val(); // document.queryselector.value
+
+            if(uid==null || uid.length<1){
+                alert('공백 입력 불가');
+                return false;
+            }
+
+            return false;
+        })
+        */
+
+
+        //////////////////////////////
+
+        // 이벤트 연결 범위 한정
+
+        /*
+        $('h1').click(function(){
+            var length = $('h1').length; // 개수
+            let oldHtml = $(this).html();
+            $('#wrap').append('<h1>'+length+ '-' +oldHtml+ '</h1>');
+        })
+        */
+
+        // 동적 태그에도 이벤트 적용 
+        // -> 감싸는 쪽(#wrap)에 click 이벤트 연결하고 범위 한정(h1)
+        /*$('#wrap').on('click', 'h1', function(){
+            var length = $('h1').length; 
+            let oldHtml = $(this).html();
+            $('#wrap').append('<h1>'+length+ '-' +oldHtml+ '</h1>');
+        })*/
+
+        //////////////////////////////
+
+        // 키보드 이벤트
+
+        $('textarea').keyup(function(){
+            let cnt = $(this).val().length;
+            let remain = 150-cnt;
+
+            if(remain<0){
+                alert('작성 내용은 150자를 초과할 수 없습니다.');
+                let str = $(this).val().substr(0, 150);
+                $(this).val(str);
+                $('span').text('150'); // span에 150 넣어주기
+                return false;
+            }
+
+            $('span').text(cnt);
+        })
+
+
+    })
+
+    </script>
+</head>
+<body>
+
+
+    <textarea cols="50" rows="5"></textarea>
+    <span>0</span>/150
+
+
+    <!-- <div id="wrap">
+        <h1>header</h1>
+    </div> -->
+
+    <!-- <form>
+        <input type="text" id="uid" name="uid">
+        <input type="submit">
+    </form>
+
+    <a href="http://www.naver.com">Naver</a> -->
+
+    <!-- <div>
+        <h3>header 1</h3>
+        <p> paragraph1</p>
+        <input type="hidden" value="1">
+    </div>
+    <div>
+        <h3>header 2</h3>
+        <p> paragraph2</p>
+    </div>
+    <div>
+        <h3>header 3</h3>
+        <p> paragraph3</p>
+    </div> -->
+        
+
+
+    <!-- <h1>header-0</h1>
+    <h1>header-1</h1>
+    <h1>header-2</h1> -->
+    
+</body>
+</html>
