@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello Form with jQuery</title>
+
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"
+            integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+            crossorigin="anonymous"></script>
+    <script>
+
+        $(document).ready(function (){
+
+            $.ajax('/data.html', {
+                // 통신이 정상일 때 처리할 함수
+                success : function (data){
+                    console.log(data);
+                    $('body').append(data); // 응답으로 받은 data body에 넣음
+                }
+            })
+
+            // url 없이 바로 option 설정
+            $.ajax({
+                url : '/data.html',
+                success : function (data){
+                    console.log(data);
+                    $('body').append(data);
+                }
+            })
+
+            // 파라미터 전송
+            // /parameter    get     name, price 전송
+
+            $('#btnSubmit').click(function (){
+
+                let name = $('#name').val();
+                let price = $('#price').val();
+
+                $.ajax({
+                    url : '/parameter',
+                    type : 'get', // post, put, delete, ... 생략시 get
+                    data : {name:name, price:price}, // {} 또는 문자열(쿼리스트링) name=milk&price=1000
+                    success : function (data){
+                        console.log('통신 결과 : ', data);
+                        $('body').append('<h3>'+data+'</h3>');
+                    }
+                })
+            })
+
+            //////////////////////////////////////////////////////
+
+            // jQuery get 메소드
+            // jQuery.get( url [, success ] )
+            $.get('/data.html', function (data){
+                // success시 수행되는 메소드
+                $('body').html(data);
+            })
+
+
+            // jQuery.get( url , [ data ])
+            $.get('/parameter', {name:'우유', price:3000}, function (data){
+                $('body').html(data);
+            })
+
+
+            // jQuery.get( url [, success ] [, dataType ] )
+            $.get('/data.json', function (data){
+                console.log(data);
+
+                $.each(data, function (index, item){
+                    $('body').append('<h2>' +item.name+ ' : ' +item.price+ '</h2>');
+                })
+
+            }, 'json')
+
+            // 바로 javascript 객체로 반환해줌
+            $.getJSON('/data.json', function (data){
+                console.log(data);
+
+                $.each(data, function (index, item){
+                    $('body').append('<h2>' +item.name+ ' : ' +item.price+ '</h2>');
+                })
+            })
+
+
+            $('div').load('/data.html'); // jQuery.get( url, success ) 와 같은 기능!!
+
+
+            //////////////////////////////////////////////////////
+
+            // xml 조작
+            $.ajax({
+                url: '/data.xml',
+                success : function (data){
+
+                    // 현재 들어오는 것은 xml 문서이므로 parse해줄 필요 X
+                    // jQuery객체인 data안의 product를 모두 찾아 각각 반복
+                    $(data).find('product').each(function (){
+
+                        let name = $(this).find('name').text();
+                        let price = $(this).find('price').text();
+
+                        $('div').append('<h3>'+name+':'+price+'</h3>');
+                    })
+                }
+            })
+
+            //////////////////////////////////////////////////////
+
+            // .serializeArray() -> form Tag 필요
+            // form 캐스팅 + parameter 자동으로 가져오기(name 필요)
+            $('#myForm').submit(function (){
+
+                // $(this) = submit
+                let param1 = $(this).serialize(); // form 안의 이름으로 쿼리스트링 생성
+                let param2 = $(this).serializeArray(); // 배열 객체 형식으로 처리
+
+                console.log('param1', param1);
+                console.log('param2', param2);
+
+                // serialize를 이용해 get에 넣어주기!
+                $.get('/parameter', param2, function (data){
+                    $('body').html(data);
+                })
+
+                return false;
+            })
+
+        })
+
+    </script>
+
+</head>
+<body>
+
+    <form id="myForm">
+        이름 <input type="text" name="name" id="name">
+        가격 <input type="text" name="price" id="price">
+        <input type="submit" id="btnSubmit" value="전송">
+    </form>
+
+    <!--<div></div>-->
+
+    <!--이름 <input type="text" name="name" id="name">
+    가격 <input type="text" name="price" id="price">
+    <input type="submit" id="btnSubmit" value="전송">-->
+
+</body>
+</html>
