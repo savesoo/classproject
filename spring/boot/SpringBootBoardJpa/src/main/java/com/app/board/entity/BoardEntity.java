@@ -11,7 +11,7 @@ import java.time.LocalDate;
 @ToString
 @Builder
 @Entity
-@Table(name="board")
+@Table(name="tbl_board")
 public class BoardEntity {
 
     @Id
@@ -28,9 +28,9 @@ public class BoardEntity {
     @Column(length = 90)
     private String photo;
 
-    @Column
+    @Column(name = "regdate", insertable = false, updatable = false)
     private LocalDate regDate;
-    @Column
+    @Column(name = "updatedate",insertable = false)
     private LocalDate updateDate;
 
 }

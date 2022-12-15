@@ -2,6 +2,8 @@ package com.app.board.service;
 
 import com.app.board.domain.BoardDTO;
 import com.app.board.domain.BoardWriteRequest;
+import com.app.board.entity.BoardEntity;
+import com.app.board.entity.BoardRepository;
 import com.app.board.mapper.BoardMapper;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,9 +20,9 @@ import java.util.UUID;
 public class BoardWriteService {
 
     @Autowired
-    private BoardMapper boardMapper;
+    private BoardRepository boardRepository;
 
-    public int write(BoardWriteRequest boardWriteRequest){
+    public BoardEntity write(BoardWriteRequest boardWriteRequest){
 
         MultipartFile file = boardWriteRequest.getFormFile();
 
@@ -58,18 +60,18 @@ public class BoardWriteService {
 
         }
 
-        BoardDTO boardDTO = boardWriteRequest.toBoardDTO();
+        BoardEntity boardEntity = boardWriteRequest.toBoardEntity();
 
         if(newFileName != null){
-            boardDTO.setPhoto(newFileName);
+            boardEntity.setPhoto(newFileName);
         }
 
-        int result = 0;
+        BoardEntity result = null;
 
         try {
             // DB insert
-            result = boardMapper.insert(boardDTO);
-        } catch (SQLException e){
+            result = boardRepository.save(boardEntity);
+        } catch (Exception e){
 
             // 만약 파일 이름이 없다면 삭제 처리
             if(newFileName!=null){

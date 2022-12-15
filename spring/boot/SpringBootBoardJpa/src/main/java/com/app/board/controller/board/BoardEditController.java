@@ -30,7 +30,7 @@ public class BoardEditController {
                          Model model
     ){
 
-        model.addAttribute("board", boardViewService.selectBoardDTO(bno));
+        model.addAttribute("board", boardViewService.selectBoardEntity(bno));
         model.addAttribute("currentPageNum", p);
 
     }

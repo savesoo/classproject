@@ -1,6 +1,8 @@
 package com.app.board.service;
 
 import com.app.board.domain.BoardDTO;
+import com.app.board.entity.BoardEntity;
+import com.app.board.entity.BoardRepository;
 import com.app.board.mapper.BoardMapper;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +15,7 @@ import java.lang.reflect.Field;
 @Service
 public class BoardDeleteService {
 
+/*
     @Autowired
     private BoardMapper boardMapper;
 
@@ -35,4 +38,27 @@ public class BoardDeleteService {
 
         return result;
     }
+*/
+
+
+    @Autowired
+    private BoardRepository boardRepository;
+
+    public void delete(int bno){
+
+        // 삭제하려는 게시물의 Data(파일 여부 판단)
+        BoardEntity boardEntity = boardRepository.findByBno(bno);
+
+        // 삭제 결과 확인
+        boardRepository.deleteById(bno);
+
+        if(boardEntity.getPhoto()!=null){
+            File delFile = new File(new File("").getAbsolutePath(), "photo"+File.separator+boardEntity.getPhoto());
+            if(delFile.exists()){
+                delFile.delete();
+            }
+        }
+
+    }
+
 }

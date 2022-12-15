@@ -41,7 +41,7 @@
               <td th:text="${board.bno}">1</td>
               <td>
                 <a th:text="${board.title}" th:href="@{/board/view(bno=${board.bno},p=${listPage.pageNum})}"></a>
-                <span th:text="${board.replyCnt}" class="badge bg-secondary"></span>
+                <!--<span th:text="${board.replyCnt}" class="badge bg-secondary"></span>-->
               </td>
               <td th:text="${board.writer}">suspect X</td>
               <td th:text="${board.regDate}">2022-12-07</td>

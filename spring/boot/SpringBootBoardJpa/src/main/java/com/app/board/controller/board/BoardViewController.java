@@ -19,6 +19,6 @@ public class BoardViewController {
                             Model model
     ){
         model.addAttribute("currentPageNum", p);
-        model.addAttribute("boardView", boardViewService.selectBoardDTO(bno));
+        model.addAttribute("boardView", boardViewService.selectBoardEntity(bno));
     }
 }

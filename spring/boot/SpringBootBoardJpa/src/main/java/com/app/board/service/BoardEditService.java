@@ -2,6 +2,8 @@ package com.app.board.service;
 
 import com.app.board.domain.BoardDTO;
 import com.app.board.domain.BoardEditRequest;
+import com.app.board.entity.BoardEntity;
+import com.app.board.entity.BoardRepository;
 import com.app.board.mapper.BoardMapper;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +12,6 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
 import java.io.IOException;
-import java.sql.SQLException;
 import java.util.UUID;
 
 @Log4j2
@@ -18,9 +19,9 @@ import java.util.UUID;
 public class BoardEditService {
 
     @Autowired
-    private BoardMapper boardMapper;
+    private BoardRepository boardRepository;
 
-    public int edit(BoardEditRequest boardEditRequest){
+    public BoardEntity edit(BoardEditRequest boardEditRequest){
 
         MultipartFile file = boardEditRequest.getFormFile();
 
@@ -60,19 +61,19 @@ public class BoardEditService {
 
             }
 
-        BoardDTO boardDTO = boardEditRequest.toBoardDTO();
+        BoardEntity boardEntity = boardEditRequest.toBoardEntity();
         if(newFileName != null){
-            boardDTO.setPhoto(newFileName);
+            boardEntity.setPhoto(newFileName);
         }
 
-        log.info(" >>>> DB에 저장 >>>>" + boardDTO);
+        log.info(" >>>> DB에 저장 >>>>" + boardEntity);
 
-        int result = 0;
+        BoardEntity result = null;
 
         try {
 
             // DB upadate
-            result = boardMapper.update(boardDTO);
+            result = boardRepository.save(boardEntity);
 
             // 새로운 파일 저장된 후 이전 파일 존재시 -> 해당 파일 삭제 처리
             // 삭제 시점은 DB저장 및 정상처리가 끝난 이후!!
@@ -87,7 +88,7 @@ public class BoardEditService {
                 }
             }
 
-        } catch (SQLException e){
+        } catch (Exception e){
 
             log.info("SQLEcxeption >>>>>>>> " + newFileName);
             // 새롭게 저장된 파일 삭제
