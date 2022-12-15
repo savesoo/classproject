@@ -9,7 +9,7 @@ import java.util.List;
 
 public interface DeptRepository extends JpaRepository<Dept, Integer> {
 
-    // DeptRepository를 주입만 받으면 됨!!!!
+    // DeptRepository를 Service에 주입만 받으면 됨!!!!
 
     Dept findByDeptno(Integer deptno);
 
@@ -18,7 +18,7 @@ public interface DeptRepository extends JpaRepository<Dept, Integer> {
     List<Dept> findByDeptnoGreaterThanAndDnameLikeAndLocLikeOrderByDeptnoDesc(Integer deptno, String dname, String loc);
 
 
-    @Query("select d from Dept d where d.loc like :loc")
+    @Query(value = "select d from Dept d where d.loc like :loc", nativeQuery = true)
     List<Dept> findByLocLike(@Param("loc") String loc);
 
 

@@ -30,7 +30,7 @@ public class DeptRepositoryTest {
 
         log.info("::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::");
 
-        // 정렬 기준 설정
+        // 정렬 기준 설정 -> 결과 가져옴
         Sort sort = Sort.by(Sort.Direction.DESC, "dname"); // 컬럼 이름이 기준
         List<Dept> list2 = deptRepository.findAll(sort);
         for(Dept dept : list2){
