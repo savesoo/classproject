@@ -1,10 +1,8 @@
-package com.app.board.service;
+package com.app.board.service.board;
 
-import com.app.board.domain.BoardDTO;
 import com.app.board.domain.BoardWriteRequest;
 import com.app.board.entity.BoardEntity;
-import com.app.board.entity.BoardRepository;
-import com.app.board.mapper.BoardMapper;
+import com.app.board.repository.BoardRepository;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,7 +10,6 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
 import java.io.IOException;
-import java.sql.SQLException;
 import java.util.UUID;
 
 @Log4j2
@@ -22,7 +19,7 @@ public class BoardWriteService {
     @Autowired
     private BoardRepository boardRepository;
 
-    public BoardEntity write(BoardWriteRequest boardWriteRequest){
+    public int write(BoardWriteRequest boardWriteRequest){
 
         MultipartFile file = boardWriteRequest.getFormFile();
 
@@ -66,11 +63,11 @@ public class BoardWriteService {
             boardEntity.setPhoto(newFileName);
         }
 
-        BoardEntity result = null;
+        int result = 0;
 
         try {
             // DB insert
-            result = boardRepository.save(boardEntity);
+            result = boardRepository.save(boardEntity) != null ? 1: 0;
         } catch (Exception e){
 
             // 만약 파일 이름이 없다면 삭제 처리

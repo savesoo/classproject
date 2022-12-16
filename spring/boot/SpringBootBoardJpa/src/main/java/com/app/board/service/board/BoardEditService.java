@@ -1,10 +1,8 @@
-package com.app.board.service;
+package com.app.board.service.board;
 
-import com.app.board.domain.BoardDTO;
 import com.app.board.domain.BoardEditRequest;
 import com.app.board.entity.BoardEntity;
-import com.app.board.entity.BoardRepository;
-import com.app.board.mapper.BoardMapper;
+import com.app.board.repository.BoardRepository;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,6 +10,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
 import java.io.IOException;
+import java.time.LocalDate;
 import java.util.UUID;
 
 @Log4j2
@@ -21,7 +20,7 @@ public class BoardEditService {
     @Autowired
     private BoardRepository boardRepository;
 
-    public BoardEntity edit(BoardEditRequest boardEditRequest){
+    public int edit(BoardEditRequest boardEditRequest){
 
         MultipartFile file = boardEditRequest.getFormFile();
 
@@ -62,18 +61,21 @@ public class BoardEditService {
             }
 
         BoardEntity boardEntity = boardEditRequest.toBoardEntity();
+        boardEntity.setUpdateDate(LocalDate.now());
         if(newFileName != null){
             boardEntity.setPhoto(newFileName);
-        }
+        }/* else {
+            boardEntity.setPhoto(null);
+        }*/
 
         log.info(" >>>> DB에 저장 >>>>" + boardEntity);
 
-        BoardEntity result = null;
+        int result = 0;
 
         try {
 
             // DB upadate
-            result = boardRepository.save(boardEntity);
+            result = boardRepository.save(boardEntity) != null ? 1: 0;
 
             // 새로운 파일 저장된 후 이전 파일 존재시 -> 해당 파일 삭제 처리
             // 삭제 시점은 DB저장 및 정상처리가 끝난 이후!!
@@ -90,7 +92,7 @@ public class BoardEditService {
 
         } catch (Exception e){
 
-            log.info("SQLEcxeption >>>>>>>> " + newFileName);
+            log.info("Ecxeption >>>>>>>> " + newFileName);
             // 새롭게 저장된 파일 삭제
             if(newFileName!=null){
                 File delFile = new File(saveDir, newFileName);

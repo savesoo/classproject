@@ -1,9 +1,7 @@
-package com.app.board.service;
+package com.app.board.service.reply;
 
-import com.app.board.domain.ReplyDTO;
 import com.app.board.entity.ReplyEntity;
-import com.app.board.entity.ReplyRepository;
-import com.app.board.mapper.ReplyMapper;
+import com.app.board.repository.ReplyRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,7 +14,7 @@ public class ReplyListService {
     private ReplyRepository replyRepository;
 
     public List<ReplyEntity> selectAll(int bno){
-        return replyRepository.findReplyEntitiesByBno(bno);
+        return replyRepository.findByBno(bno);
     }
 
 

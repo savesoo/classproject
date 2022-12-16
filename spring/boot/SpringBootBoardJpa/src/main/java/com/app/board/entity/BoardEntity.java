@@ -23,7 +23,7 @@ public class BoardEntity {
     private String title;
     @Column(length = 2000, nullable = false)
     private String content;
-    @Column(length = 50, nullable = false)
+    @Column(length = 50, nullable = false, updatable = false)
     private String writer;
     @Column(length = 90)
     private String photo;

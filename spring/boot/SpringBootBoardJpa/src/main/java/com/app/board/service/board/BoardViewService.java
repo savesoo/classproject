@@ -1,9 +1,7 @@
-package com.app.board.service;
+package com.app.board.service.board;
 
-import com.app.board.domain.BoardDTO;
 import com.app.board.entity.BoardEntity;
-import com.app.board.entity.BoardRepository;
-import com.app.board.mapper.BoardMapper;
+import com.app.board.repository.BoardRepository;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -23,7 +21,7 @@ public class BoardViewService {
     private BoardRepository boardRepository;
 
     public BoardEntity selectBoardEntity(int bno){
-        return boardRepository.findByBno(bno);
+        return boardRepository.findById(bno).get(); // notnull일 때 체크하기 위한 .get()
     }
 
 }
