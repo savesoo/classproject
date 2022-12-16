@@ -7,4 +7,6 @@ import java.util.List;
 public interface ReplyRepository extends JpaRepository<ReplyEntity, Integer> {
 
     List<ReplyEntity> findReplyEntitiesByBno(Integer bno);
+
+    ReplyEntity findByRno(Integer rno);
 }
