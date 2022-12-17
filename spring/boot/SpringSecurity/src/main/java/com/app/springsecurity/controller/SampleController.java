@@ -32,10 +32,12 @@ public class SampleController {
 
     @GetMapping("/login")
     public void login(){
-        log.info("login");
+        log.info("login .................");
     }
 
-
-
+    @GetMapping("/manager")
+    public void manager(){
+        log.info("manager .................");
+    }
 
 }

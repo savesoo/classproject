@@ -19,11 +19,6 @@ import org.springframework.security.web.authentication.AuthenticationSuccessHand
 @Configuration
 public class CustomSecurityConfig {
 
-    @Bean
-    public AuthenticationSuccessHandler successHandler(){
-        return new CustomLoginSuccessHandler();
-    }
-
     @Bean // filter에서 설정 사용하기 위한 bean 등록
     public SecurityFilterChain filterChain(HttpSecurity httpSecurity) throws Exception {
 
@@ -50,16 +45,25 @@ public class CustomSecurityConfig {
         httpSecurity.logout();
 
         // 5. 자동 로그인
-        //httpSecurity.rememberMe().key("1234567890").rememberMeParameter("remember-me").tokenValiditySeconds(60*60*24*7);
+        httpSecurity.rememberMe().key("1234567890").rememberMeParameter("remember-me").tokenValiditySeconds(60*60*24*7);
 
         return httpSecurity.build();
     }
 
+
+    // 로그인 성공시 처리하는 핸들러
+    @Bean
+    public AuthenticationSuccessHandler successHandler(){
+        return new CustomLoginSuccessHandler();
+    }
+
+    // 권한 부족 처리하는 핸들러
     @Bean
     public AccessDeniedHandler accessDeniedHandler(){
         return new Custom403Handler();
     }
 
+    // 비밀번호 암호화
     @Bean
     public PasswordEncoder passwordEncoder(){
         // xml 대신 java에 등록

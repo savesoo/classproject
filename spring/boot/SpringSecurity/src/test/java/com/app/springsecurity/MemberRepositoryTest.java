@@ -25,11 +25,11 @@ public class MemberRepositoryTest {
         Member member = Member.builder()
                 .email("test1@gmail.com")
                 .name("사용자-1")
-                .roleSet(new HashSet<MemberRole>()) // 저장할 때 넣어주기 위해
+                .roleSet(new HashSet<MemberRole>()) // 저장할 때 권한 넣어주기 위해
                 .password(passwordEncoder.encode("1111"))
                 .build();
 
-        // 기본 권한 부여
+        // 기본 권한 부여(ADMIN, USER)
         member.addMemberRole(MemberRole.ADMIN);
 
         memberRepository.save(member);

@@ -50,7 +50,7 @@ public class CustomUserDetailService implements UserDetailsService {
             authorities.add(new SimpleGrantedAuthority("ROLE_" + memberRole.name()));
         }
 
-        // 반환할 data
+        // 반환할 data (email이 @id로 설정되었으므로 usrname 자리에 들어가는 것)
         AuthMemberDTO authMemberDTO = new AuthMemberDTO(
                 member.getEmail(), member.getPassword(), authorities, member.getName()
         );

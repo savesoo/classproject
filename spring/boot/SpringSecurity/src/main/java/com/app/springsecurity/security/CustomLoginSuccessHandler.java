@@ -45,7 +45,6 @@ public class CustomLoginSuccessHandler implements AuthenticationSuccessHandler {
 
         // ROLE_ADMIN, ROLE_USER 값이 들어 있는 list
         List<String> roleNames = new ArrayList<>();
-
         for(GrantedAuthority authority : authMemberDTO.getAuthorities()){
             // 권한의 이름을 String 리스트에 저장
             roleNames.add(authority.getAuthority());
