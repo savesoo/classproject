@@ -30,8 +30,10 @@ public interface BoardRepository extends JpaRepository<BoardEntity, Integer> {
     BoardEntity findByBno(Integer bno);
 
 
-    @Query("select b from BoardEntity b where b.bno between :start and :end")
-    List<BoardEntity> findByBnoBetween(@Param("start") Integer start, @Param("end") Integer end);
+/*    @Query("select b, (SELECT count(*) FROM tbl_reply r WHERE r.bno=b.bno) as replycnt from BoardEntity b ORDER BY b.bno desc limit :start , :count")
+    List<BoardEntity> findByBnoBetween(@Param("start") Integer start, @Param("count") Integer count);*/
+
+
 
 
 
