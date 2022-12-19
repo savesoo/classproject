@@ -22,12 +22,20 @@ public class ReplyEntity {
 
     @Column(nullable = false)
     private Integer bno;
+
     @Column(length = 1000, nullable = false)
     private String reply;
-    @Column(length = 50, nullable = false)
-    private String replyer;
+
+/*    @Column(length = 50, nullable = false)
+    private String replyer;*/
+
+    @ManyToOne
+    @JoinColumn(name = "replyer")
+    private BoardMemberEntity replyer;
+
     @Column(name = "replydate")
     private LocalDate replyDate;
+
     @Column(name = "updatedate")
     private LocalDate updateDate;
 

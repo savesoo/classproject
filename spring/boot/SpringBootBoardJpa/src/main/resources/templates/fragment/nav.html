@@ -28,10 +28,26 @@
               Account
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">로그인</a></li>
-              <li><a class="dropdown-item" href="#">회원가입</a></li>
+
+              <!-- 로그인 상태일 때 표시 -->
+             <!-- <li sec:authorize="isAuthenticated()">
+                <span sec:authentication="principal.boardMember"></span>
+              </li>-->
+              <li sec:authorize="isAuthenticated()">
+                <span sec:authentication="principal.boardMember.username"> </span>
+              </li>
+              <li sec:authorize="isAuthenticated()">
+                <span sec:authentication="principal.boardMember.userid"> </span>
+              </li>
+              <li sec:authorize="isAuthenticated()"><a class="dropdown-item" href="/auth/logout">로그아웃</a></li>
+
+
+              <!-- 로그인 상태가 아닐 때 표시 -->
+              <li sec:authorize="!isAuthenticated()"><a class="dropdown-item" href="/auth/login">로그인</a></li>
+
+              <!--<li><a class="dropdown-item" href="#">회원가입</a></li>-->
               <!--              <li><hr class="dropdown-divider"></li>-->
-              <li><a class="dropdown-item" href="#">로그아웃</a></li>
+
             </ul>
           </li>
           <!--          <li class="nav-item">-->

@@ -43,7 +43,7 @@
                 <a th:text="${board.title}" th:href="@{/board/view(bno=${board.bno},p=${listPage.pageNum})}"></a>
                 <!--<span th:text="${board.replyCnt}" class="badge bg-secondary"></span>-->
               </td>
-              <td th:text="${board.writer}">suspect X</td>
+              <td th:text="${board.writer.username}">suspect X</td>
               <td th:text="${board.regDate}">2022-12-07</td>
             </tr>
           </tbody>
@@ -55,16 +55,18 @@
 
             <th:block th:if="${listPage.prev}">
             <li class="page-item">
-              <a class="page-link" th:href="@{/board/list(p=${listPage.startNum-1})}">&laquo;</a>
+              <a class="page-link" th:href="@{/board/list(p=${(listPage.startNum-1})}">&laquo;</a>
             </li>
             </th:block>
 
 
+            <th:block th:if="${listPage.endNum}>0">
             <th:block th:each="num : ${#numbers.sequence(listPage.startNum, listPage.endNum)}"
                       th:with="active=${listPage.pageNum==num?'active':''}"> <!-- 달라지는 active값 저장. 현재 페이지의 숫자에 따라 active되는 숫자도 달라짐 -->
             <li class="page-item"  th:classappend="${active}"> <!-- 저장된 active를 class 속성에 추가해줌 -->
               <a class="page-link" th:href="@{/board/list(p=${num})}" th:text="${num}"></a>
             </li>
+            </th:block>
             </th:block>
 
 

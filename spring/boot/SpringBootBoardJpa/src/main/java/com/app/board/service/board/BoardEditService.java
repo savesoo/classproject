@@ -61,7 +61,7 @@ public class BoardEditService {
             }
 
         BoardEntity boardEntity = boardEditRequest.toBoardEntity();
-        boardEntity.setUpdateDate(LocalDate.now());
+
         if(newFileName != null){
             boardEntity.setPhoto(newFileName);
         }/* else {
@@ -75,6 +75,7 @@ public class BoardEditService {
         try {
 
             // DB upadate
+            boardEntity.setUpdateDate(LocalDate.now()); // 수정시간 설정
             result = boardRepository.save(boardEntity) != null ? 1: 0;
 
             // 새로운 파일 저장된 후 이전 파일 존재시 -> 해당 파일 삭제 처리

@@ -21,15 +21,22 @@ public class BoardEntity {
 
     @Column(length = 200, nullable = false)
     private String title;
+
     @Column(length = 2000, nullable = false)
     private String content;
-    @Column(length = 50, nullable = false, updatable = false)
-    private String writer;
+/*    @Column(nullable = false, updatable = false)
+    private String writer;*/
+
+    @ManyToOne
+    @JoinColumn(name = "writer")
+    private BoardMemberEntity writer;
+
     @Column(length = 90)
     private String photo;
 
     @Column(name = "regdate", insertable = false, updatable = false)
     private LocalDate regDate;
+
     @Column(name = "updatedate",insertable = false)
     private LocalDate updateDate;
 

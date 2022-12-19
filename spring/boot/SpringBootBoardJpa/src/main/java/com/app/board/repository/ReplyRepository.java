@@ -27,6 +27,15 @@ public interface ReplyRepository extends JpaRepository<ReplyEntity, Integer> {
 
 
 
+    // 게시글 삭제시 해당 게시물의 모든 댓글 삭제 처리
+    @Transactional
+    @Modifying
+    @Query("delete from ReplyEntity r where r.bno = :bno")
+    int deleteByBno(Integer bno);
+
+
+
+
 
 
 }

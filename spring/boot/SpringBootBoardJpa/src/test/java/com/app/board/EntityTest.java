@@ -66,7 +66,7 @@ public class EntityTest {
         BoardWriteRequest -> Entity -> save()
         */
 
-        BoardWriteRequest writeRequest = BoardWriteRequest.builder()
+        /*BoardWriteRequest writeRequest = BoardWriteRequest.builder()
                         .title("2022-12-16 JPA test write")
                         .writer("JPA")
                         .content("test run!")
@@ -75,7 +75,7 @@ public class EntityTest {
         BoardEntity board = writeRequest.toBoardEntity();
 
         log.info(" insert 전 : " + board);
-        log.info(" insert 후 : " + boardRepository.save(board));
+        log.info(" insert 후 : " + boardRepository.save(board));*/
 
     }
 

@@ -44,12 +44,12 @@ function setList(){
             $.each(data, (index, reply)=>{
 
                 // 새로운 tr 생성해 replyIndex 영역에 추가
-                let html = '<td class="col-2">'+reply.replyer+'</td>'
+                let html = '<td class="col-2">'+reply.replyer.username+'</td>'
                 html+= '<td class="col">'+reply.reply+'</td>'
                 html+= '<td class="col-2">'+reply.replyDate+'</td>'
                 html+= '<td class="col-2">' +
-                    '<a href="javascript:" class="badge bg-warning text-decoration-none edit">수정</a>' +
-                    '<a href="javascript:" class="badge bg-danger text-decoration-none del">삭제</a> ' +
+                    '<a href="javascript:" replyer-idx="'+reply.replyer.idx+'" class="badge bg-warning text-decoration-none edit">수정</a>' +
+                    '<a href="javascript:" replyer-idx="'+reply.replyer.idx+'" class="badge bg-danger text-decoration-none del">삭제</a> ' +
                     '</td>'
 
                 /* '<a href="javascript:showEditModal('+reply.rno+')" class="badge bg-warning text-decoration-none">수정</a>' +
@@ -94,12 +94,12 @@ function insertReply(){
             const reply = data;
 
             // replyList 영역에 새로운 tr을 추가
-            let html = '<td class="col-2">'+reply.replyer+'</td>'
+            let html = '<td class="col-2">'+reply.replyer.username+'</td>'
             html+= '<td class="col">'+reply.reply+'</td>'
             html+= '<td class="col-2">'+reply.replyDate+'</td>'
             html+= '<td class="col-2">' +
-                '<a href="javascript:" class="badge bg-warning text-decoration-none edit">수정</a>' +
-                '<a href="javascript:" class="badge bg-danger text-decoration-none del">삭제</a> ' +
+                '<a href="javascript:" replyer-idx="'+reply.replyer.idx+'" class="badge bg-warning text-decoration-none edit">수정</a>' +
+                '<a href="javascript:" replyer-idx="'+reply.replyer.idx+'" class="badge bg-danger text-decoration-none del">삭제</a> ' +
                 '</td>'
 
             // 부모 태그에 요소 추가
@@ -124,6 +124,11 @@ function deleteReply(e){
 
     // a 기본 기능 제거
     e.preventDefault();
+
+    if(midx != $(this).attr('replyer-idx')){
+        alert('수정 또는 삭제할 권한이 없습니다.');
+        return false;
+    }
 
     if(!confirm('정말로 삭제하시겠습니까?')){
         return;
@@ -167,6 +172,11 @@ function showEditModal(e){
     // a 기본 기능 제거
     e.preventDefault();
 
+    if(midx != $(this).attr('replyer-idx')){
+        alert('수정 또는 삭제할 권한이 없습니다.');
+        return false;
+    }
+
     // 모달에서 보여주는 show 함수
     editModal.show();
 
@@ -184,7 +194,10 @@ function showEditModal(e){
 
     // 저장된 각 데이터를 get
     $('#erno').val(rno);
-    $('#ereplyer').val($(editTD).eq(0).text());
+    $('#ereplyerName').val($(editTD).eq(0).text());
+
+    $('#ereplyer').val($(this).attr('replyer-idx')); // 댓글 작성한 USER(=replyer)의 idx
+
     $('#ereply').val($(editTD).eq(1).text());
     $('#ereplydate').val($(editTD).eq(2).text());
 
