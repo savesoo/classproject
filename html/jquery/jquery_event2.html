@@ -61,6 +61,7 @@
             console.log('checked 상태 : ', this.checked);
 
             if(this.checked){
+                // checked 상태면 하위 요소 모두 check
                 $('#checkItem').children().prop('checked', true); 
             } else {
                 $('#checkItem').children.prop('checked', false);
@@ -69,7 +70,7 @@
             // .children() : id의 자손(아래 속한 요소)
             // .parent() : id의 부모(상위 요소)
             // .prop() : 요소의 속성 결정
-            
+
         })
 
 

@@ -13,9 +13,9 @@
         // window.onload = () => {}
         // $() -> 팩토리 함수 : jquery 객체를 생성해주는 메소드
         // document(문서객체) -> jquery 객체로 생성해줌
-        // $(document).ready(function(){
-        //     console.log('onload: jquery ready method');
-        // })
+        $(document).ready(function(){
+            console.log('onload: jquery ready method');
+        })
 
         // // document 생략 가능 + callback 함수 사용
         // $().ready(()=>{
@@ -39,7 +39,7 @@
             // $('#pick').css('background-color', 'pink');
 
 
-             ///////////////////////////////////////
+            ///////////////////////////////////////
 
             //document.querySelector('input[type=text]').value='こんにちは';
             // $('input[type=text]').val('Hello');
@@ -87,7 +87,8 @@
 
             ///////////////////////////////////////
 
-            /*// 배열 생성
+            /*
+            // 배열 생성
             let links = [
                 { name : '네이버', url : 'http://www.naver.com'}, 
                 { name : '다음', url : 'http://www.daum.net'}, 
@@ -115,11 +116,13 @@
             //console.log(bodyVal);
 
             // set (#id에 ()값을 넣어줌!)
-            $('#links').html(html); */
+            $('#links').html(html); 
+            */
 
             ///////////////////////////////////////
 
-            /*// 문서객체 여러 개를 캐스팅
+            /*
+            // 문서객체 여러 개를 캐스팅
             $('h1').each((index, item) => {
 
                 //$(item)
@@ -130,7 +133,8 @@
                 console.log(index, $(item).html());
 
                 $(item).css('color', 'red');
-            })*/
+            })
+            */
 
             ///////////////////////////////////////
 
