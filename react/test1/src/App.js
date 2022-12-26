@@ -1,7 +1,24 @@
 import logo from './logo.svg';
 import './App.css';
+import Comment from './components/Comment';
 
-function App() {
+const comment = {
+  user : {
+    userName: 'Judas',
+    imgUrl : 'https://www.google.com/url?sa=i&url=https%3A%2F%2Ftwitter.com%2Fsoultreestarlig%2Fstatus%2F1565143733041250304&psig=AOvVaw0JWrxbTjvyda4v2uq6mXRC&ust=1672130894888000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCODgm5XzlvwCFQAAAAAdAAAAABAE'
+  },
+  content : 'jejus!',
+  replydate : '2022-12-25'
+}
+
+function App(){
+  return (
+    <Comment user={comment.user} content={comment.content} replydate={comment.replydate}/>
+  ); 
+}
+
+
+/*function App() {
   return (
     <div className="App">
       <header className="App-header">
@@ -15,11 +32,11 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React 1234
+          Learn React
         </a>
       </header>
     </div>
   );
-}
+}*/
 
 export default App;
