@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+            
+    // 클래스 정의
+    class Student {
+
+        // 생성자 정의
+        constructor(name, kor, eng, math){
+            this.name = name;
+            this.kor = kor;
+            this.eng = eng;
+            this.math = math;
+        }
+
+        
+        // 메소드 정의 : 국어, 영어, 수학 총점 반환
+        getSum(){
+            return this.kor + this.eng + this.math;
+        }
+
+        // 매소드 정의 : 세 과목의 평균 점수 반환
+        getAvg(){
+            return this.getSum()/3
+        }
+
+        toString(){
+            return `${this.name}\t님의 총점은 ${this.getSum()} 점, 평균은 ${this.getAvg()} 점 입니다.`;
+        }
+
+    }
+
+    /*{
+        sum function(){
+            return // 합을 반환
+        }
+
+    }*/
+
+        const student = new Student('류정한', 100, 90, 80);
+
+        console.log('student', typeof student, student, student.toString());
+
+        /* // 배열
+        const students = [
+
+            new Student(),
+            new Student(),
+            new Student(),
+            new Student()
+        ]   
+
+        console.log('students', students);*/
+
+
+        class Rectangle{
+
+            constructor(width, height){
+                this.width = width;
+                this.height = height;
+            }
+
+            getPrimeter() {
+                return (this.width + this.height)*2
+            }
+
+            getArea() {
+                return this.width*this.height;
+            }
+        }
+
+        class Square extends Rectangle {
+            // 상위 클래스의 생성자 호출
+            constructor(length){
+                super(length, length); // 오버라이딩 가능
+            }
+        }
+
+        const square = new Square(10);
+
+        console.log('정사각형의 둘레', square.getPrimeter());
+        console.log('정사각형의 넓이', square.getArea());
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
