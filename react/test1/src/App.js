@@ -1,20 +1,26 @@
 import logo from './logo.svg';
 import './App.css';
 import Comment from './components/Comment';
+import Notification from './components/Notification';
+import Counter from './components/Counter';
+import TextInputButton from './components/TextInputButton';
+import Accommodate from './components/Accommodate';
+import Toggle from './components/Toggle';
+import MyButton from './components/MyButton';
+import ConfirmButton from './components/ConfirmButton';
+import Greeting from './components/Greeting';
+import LoginControl from './components/LoginControl';
+import Mailbox from './components/Mailbox';
+import UserStatus from './components/UserStatus';
+import WarningBanner from './components/WarningBanner';
+import Mainpage from './components/Mainpage';
 
-const comment = {
-  user : {
-    userName: 'Judas',
-    imgUrl : 'https://www.google.com/url?sa=i&url=https%3A%2F%2Ftwitter.com%2Fsoultreestarlig%2Fstatus%2F1565143733041250304&psig=AOvVaw0JWrxbTjvyda4v2uq6mXRC&ust=1672130894888000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCODgm5XzlvwCFQAAAAAdAAAAABAE'
-  },
-  content : 'jejus!',
-  replydate : '2022-12-25'
-}
+let list = [{}, {}, {}, {}, {}, {}, {}];
 
 function App(){
   return (
-    <Comment user={comment.user} content={comment.content} replydate={comment.replydate}/>
-  ); 
+    <Mainpage />
+  )
 }
 
 
