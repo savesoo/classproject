@@ -13,13 +13,27 @@ import LoginControl from './components/LoginControl';
 import Mailbox from './components/Mailbox';
 import UserStatus from './components/UserStatus';
 import WarningBanner from './components/WarningBanner';
+
 import Mainpage from './components/Mainpage';
+import NumberList from './components/NumberList';
+import TeamPlayers from './components/TeamPlayers';
+import NameForm from './components/NameForm';
+import RequestForm from './components/RequestForm';
+import Fruitselect from './components/Fruitselect';
+import Reservation from './components/Reservation';
+import SignUp from './components/SignUp';
+import FancyBorder from './components/FancyBorder';
+import WelcomeMessage from './components/WelcomeMessage';
+import WelcomeDialog from './components/WelcomeDialog';
+import SignUpDialog from './components/SignUpDialog';
+import ProfileCard from './components/ProfileCard';
+import DarkOrLight from './components/DarkOrLight';
 
 let list = [{}, {}, {}, {}, {}, {}, {}];
 
 function App(){
   return (
-    <Mainpage />
+    <DarkOrLight />
   )
 }
 
