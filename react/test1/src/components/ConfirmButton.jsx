@@ -5,6 +5,7 @@ function ConfirmButton(props){
 
     const [isConfirmed, setIsConfirmed] = useState(false);
 
+    // 콜백 함수 들어옴
     const handleConfirm = () => {
         setIsConfirmed((prevIsConfirmed) => !prevIsConfirmed)
     }
