@@ -49,7 +49,7 @@ nav {
 
 nav>ul {
     float: left;
-    width: 450px;
+    width: 520px;
     overflow: hidden;
 
     list-style: none;
@@ -65,7 +65,7 @@ nav>ul>li {
 
 nav>div {
     float: right;
-    width: 330px;
+    width: 260px;
     text-align: right;
 
     padding: 8px 0;
