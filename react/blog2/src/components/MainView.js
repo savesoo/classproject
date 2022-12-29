@@ -1,7 +1,8 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Header from "./Header";
 import Wrapper from "./Wrapper";
 import Nav from "./Nav";
+import Footer from "./footer";
 
 const blogData = {
 
@@ -50,8 +51,12 @@ const blogData = {
 
 }
 
-
 function MainView(props) {
+
+    const [selectPost, setSelectPost] = useState();
+
+    //const lists = [{blogData.postList}];
+
     return (
         <>
            <Header header={blogData.header}/>
@@ -59,9 +64,7 @@ function MainView(props) {
             <Wrapper postList={blogData.postList}
                      category={blogData.aside.category}
                      recentPost={blogData.aside.recentPost}/>
-            <footer>
-                Create by Soo
-            </footer>
+            <Footer/>
         </>
     );
 }
