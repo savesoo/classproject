@@ -28,12 +28,14 @@ import WelcomeDialog from './components/WelcomeDialog';
 import SignUpDialog from './components/SignUpDialog';
 import ProfileCard from './components/ProfileCard';
 import DarkOrLight from './components/DarkOrLight';
+import Container from './components/ex1/Container';
+import WordContainer from './components/ex2/WordContainer';
 
 let list = [{}, {}, {}, {}, {}, {}, {}];
 
 function App(){
   return (
-    <DarkOrLight />
+    <WordContainer />
   )
 }
 
