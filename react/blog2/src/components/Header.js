@@ -2,6 +2,7 @@ import React from 'react';
 
 // {title: '', description : ''} 형태로 header 전달~>
 function Header({header}) {
+
     return (
         <div>
             <header>
@@ -10,6 +11,9 @@ function Header({header}) {
             </header>
         </div>
     );
+
+
+
 }
 
 export default Header;

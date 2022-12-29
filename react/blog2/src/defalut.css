@@ -28,11 +28,13 @@ header {
 
 .title {
     font-family: 'Gowun Batang', serif;
+    margin: 5px;
 }
 
 header>p {
     color: #646;
     margin-top: 5px;
+    margin: 5px;
 }
 
 /* nav */
@@ -83,7 +85,7 @@ nav>div>input[type=text] {
     margin-right: -6px;
 }
 
-nav>div>input[type=button] {
+nav>div>button {
     height: 22px;
     width: 50px;
     border-radius: 0 10px 10px 0;
@@ -126,7 +128,8 @@ article>h2 + p {
 
 article>img {
     width: 80%;
-    margin: 20px 0;
+    margin: 20px 0 15px 50px;
+    text-align: center;
 }
 
 .lh-180 {
@@ -142,13 +145,14 @@ aside {
 }
 
 aside>h4 {
-    margin-top: 20px;
+    margin: 10px 30px;
 }
 
 aside>ul {
     list-style: none;
-    margin-left: 10px; /* 들여쓰기. li에서 padding 줘도 됨 */
-    margin-top: 5px;
+    margin-left: 30px; /* 들여쓰기. li에서 padding 줘도 됨 */
+    margin-top: 10px;
+    padding-bottom: 5px;
 }
 
 /* footer */
