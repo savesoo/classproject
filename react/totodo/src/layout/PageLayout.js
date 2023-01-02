@@ -18,8 +18,9 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
-import MenuComponent from "../components/menu/MenuComponent";
 import CustomToolbar from "../components/toolbar/CustomToolbar";
+import MenuComponent from "../components/menu/MenuComponent";
+
 
 const drawerWidth = 240;
 
